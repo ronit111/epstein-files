@@ -83,13 +83,13 @@ export function SearchBar() {
           onBlur={() => setTimeout(() => setIsOpen(false), 200)}
           onKeyDown={handleKeyDown}
           placeholder="Search entities..."
-          aria-label="Search people, documents, events"
+          aria-label="Search people, organizations, documents, and locations"
           aria-autocomplete="list"
-          className="w-full pl-9 pr-16 py-1.5 bg-[var(--color-ink-light)] border border-[var(--color-ink-lighter)] rounded text-sm text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:border-[var(--color-accent)] transition-colors"
+          className="w-full pl-9 pr-3 lg:pr-16 py-2 bg-[var(--color-ink-light)] border border-[var(--color-ink-lighter)] rounded text-sm text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:border-[var(--color-accent)] transition-colors"
           style={{ fontFamily: 'var(--font-body)' }}
         />
-        {/* Keyboard shortcut hint */}
-        <kbd className="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-[var(--color-text-muted)] bg-[var(--color-ink-lighter)] px-1.5 py-0.5 rounded" style={{ fontFamily: 'var(--font-mono)' }}>
+        {/* Keyboard shortcut hint — hidden on touch devices */}
+        <kbd className="hidden lg:inline-block absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-[var(--color-text-muted)] bg-[var(--color-ink-lighter)] px-1.5 py-0.5 rounded" style={{ fontFamily: 'var(--font-mono)' }}>
           {navigator.platform.includes('Mac') ? '\u2318' : 'Ctrl'}K
         </kbd>
       </div>

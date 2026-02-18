@@ -110,9 +110,9 @@ export function CinematicIntro() {
           className="intro-section min-h-screen flex items-center justify-center relative"
           style={{ zIndex: 1 }}
         >
-          <div className="intro-content max-w-3xl mx-auto px-8 text-center">
+          <div className="intro-content max-w-3xl mx-auto px-6 sm:px-8 text-center">
             <h2
-              className="text-5xl md:text-7xl font-medium mb-6 text-[var(--color-text-primary)]"
+              className="text-3xl sm:text-5xl lg:text-7xl font-medium mb-6 text-[var(--color-text-primary)]"
               style={{ fontFamily: 'var(--font-display)' }}
             >
               {section.headline}
@@ -126,19 +126,19 @@ export function CinematicIntro() {
               </p>
             )}
             {section.body && (
-              <p className="text-xl md:text-2xl text-[var(--color-text-secondary)] leading-relaxed max-w-2xl mx-auto">
+              <p className="text-base sm:text-xl lg:text-2xl text-[var(--color-text-secondary)] leading-relaxed max-w-2xl mx-auto">
                 {section.body}
               </p>
             )}
             {section.stat && (
               <div className="mt-4">
                 <span
-                  className="text-6xl md:text-8xl font-bold text-[var(--color-text-primary)] block mb-4"
+                  className="text-4xl sm:text-6xl lg:text-8xl font-bold text-[var(--color-text-primary)] block mb-4"
                   style={{ fontFamily: 'var(--font-display)' }}
                 >
                   {section.stat.value}
                 </span>
-                <p className="text-xl text-[var(--color-text-secondary)]">
+                <p className="text-base sm:text-xl text-[var(--color-text-secondary)]">
                   {section.stat.label}
                 </p>
               </div>
@@ -151,7 +151,7 @@ export function CinematicIntro() {
       <section className="intro-section min-h-screen flex items-center justify-center relative" style={{ zIndex: 1 }}>
         <div className="intro-content text-center">
           <h2
-            className="text-4xl md:text-6xl font-medium mb-8 text-[var(--color-text-primary)]"
+            className="text-2xl sm:text-4xl lg:text-6xl font-medium mb-8 text-[var(--color-text-primary)]"
             style={{ fontFamily: 'var(--font-display)' }}
           >
             Begin Investigation

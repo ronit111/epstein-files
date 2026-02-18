@@ -37,7 +37,7 @@ function ConnectionCard({ entity, relationship }: { entity: Entity; relationship
   return (
     <button
       onClick={() => navigateToEntity(entity.id)}
-      className="w-full flex items-start gap-3 p-3 rounded hover:bg-[var(--color-ink-light)] transition-colors text-left group focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)]"
+      className="w-full flex items-start gap-3 p-3 min-h-[44px] rounded hover:bg-[var(--color-ink-light)] transition-colors text-left group focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)]"
     >
       <div
         className="w-2.5 h-2.5 rounded-full mt-1 shrink-0"
@@ -106,7 +106,7 @@ export function DetailPanel() {
         animate={{ x: 0, opacity: 1 }}
         exit={{ x: 60, opacity: 0 }}
         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-        className="h-full overflow-y-auto border-l border-[var(--color-ink-lighter)] bg-[var(--color-surface-raised)] focus:outline-none"
+        className="h-full min-w-0 overflow-y-auto overflow-x-hidden border-l border-[var(--color-ink-lighter)] bg-[var(--color-surface-raised)] focus:outline-none"
         style={{ zIndex: 'var(--z-detail)' }}
         tabIndex={-1}
         role="region"

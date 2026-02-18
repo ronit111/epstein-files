@@ -34,7 +34,7 @@ export function FilterControls() {
             key={type}
             onClick={() => toggleEntityType(type)}
             aria-pressed={active}
-            className="flex items-center gap-2 px-2 py-1.5 rounded text-xs transition-all hover:bg-[var(--color-surface-overlay)] focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] w-full text-left"
+            className="flex items-center gap-2 px-2 py-2.5 min-h-[44px] rounded text-xs transition-all hover:bg-[var(--color-surface-overlay)] focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] w-full text-left"
             style={{
               opacity: active ? 1 : 0.5,
               color: active ? ENTITY_COLORS[type] : 'var(--color-text-muted)',

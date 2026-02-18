@@ -24,11 +24,17 @@
   --node-size-2: 8;
   --node-size-3: 5;
 
-  /* Panel dimensions */
+  /* Panel dimensions — desktop (1280px+) */
   --timeline-width: 280px;
   --detail-panel-width: 420px;
   --header-height: 56px;
   --mobile-bottom-sheet: 60vh;
+
+  /* Safe areas for notched devices */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
 
   /* Z-index layers */
   --z-graph: 1;
@@ -40,8 +46,16 @@
   --z-modal: 60;
 }
 
-/* Mobile overrides */
-@media (max-width: 768px) {
+/* Small desktop / large tablet landscape (1024px–1279px) */
+@media (max-width: 1279px) {
+  :root {
+    --timeline-width: 220px;
+    --detail-panel-width: 340px;
+  }
+}
+
+/* Mobile & tablet portrait (<1024px) — single-column layout */
+@media (max-width: 1023px) {
   :root {
     --timeline-width: 0px;
     --detail-panel-width: 100%;

@@ -14,14 +14,22 @@ export default function App() {
   const navigateToEntity = useInvestigationStore((s) => s.navigateToEntity)
   const setIntroComplete = useInvestigationStore((s) => s.setIntroComplete)
 
-  // Deep linking: read entity from URL hash on mount
+  // Deep linking: read entity from URL hash on mount + browser back/forward
   useEffect(() => {
-    const hash = window.location.hash.slice(1)
-    if (hash === 'board') return
-    if (hash && getEntity(hash)) {
-      setIntroComplete(true)
-      navigateToEntity(hash)
+    const syncFromHash = () => {
+      const hash = window.location.hash.slice(1)
+      if (hash === 'board') {
+        selectEntity(null)
+        return
+      }
+      if (hash && getEntity(hash)) {
+        setIntroComplete(true)
+        navigateToEntity(hash)
+      }
     }
+    syncFromHash()
+    window.addEventListener('hashchange', syncFromHash)
+    return () => window.removeEventListener('hashchange', syncFromHash)
   }, [])
 
   // Deep linking: update URL hash when entity changes

@@ -33,19 +33,19 @@ export function BoardHeader() {
 
   return (
     <header
-      className="h-[var(--header-height)] border-b border-[var(--color-ink-lighter)] bg-[var(--color-surface-raised)] flex items-center gap-2 md:gap-4 px-3 md:px-4"
+      className="h-[var(--header-height)] border-b border-[var(--color-ink-lighter)] bg-[var(--color-surface-raised)] flex items-center gap-2 lg:gap-4 px-3 lg:px-4"
       style={{ zIndex: 'var(--z-header)' }}
       role="banner"
     >
       {/* Logo / Title */}
       <button
         onClick={resetAll}
-        className="flex items-center gap-2 shrink-0 group"
+        className="flex items-center gap-2 shrink-0 group min-h-[44px]"
         aria-label="Reset investigation board"
       >
         <div className="w-2 h-2 rounded-full bg-[var(--color-accent)] group-hover:shadow-[0_0_8px_var(--color-accent)] transition-shadow" />
         <h1
-          className="text-xs md:text-sm font-semibold tracking-widest uppercase text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)] transition-colors"
+          className="text-xs lg:text-sm font-semibold tracking-widest uppercase text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)] transition-colors"
           style={{ fontFamily: 'var(--font-mono)' }}
         >
           <span className="hidden sm:inline">The Epstein Files</span>
@@ -58,16 +58,16 @@ export function BoardHeader() {
         <SearchBar />
       </div>
 
-      {/* Breadcrumbs — hidden on mobile */}
-      <div className="flex-1 overflow-hidden hidden md:block">
+      {/* Breadcrumbs — hidden on mobile/tablet */}
+      <div className="flex-1 overflow-hidden hidden lg:block">
         <BreadcrumbTrail />
       </div>
 
-      {/* Filter toggle button */}
+      {/* Filter toggle button — 44px min touch target */}
       <div className="relative shrink-0" ref={dropdownRef}>
         <button
           onClick={() => setFiltersOpen(!filtersOpen)}
-          className="flex items-center gap-1.5 px-2 py-1.5 rounded text-xs transition-all focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)]"
+          className="flex items-center justify-center gap-1.5 min-w-[44px] min-h-[44px] px-2 py-1.5 rounded text-xs transition-all focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)]"
           style={{
             color: filtersOpen ? 'var(--color-text-primary)' : 'var(--color-text-muted)',
             backgroundColor: filtersOpen ? 'var(--color-surface-overlay)' : 'transparent',
@@ -80,7 +80,7 @@ export function BoardHeader() {
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
             <path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z" />
           </svg>
-          <span className="hidden lg:inline" style={{ fontFamily: 'var(--font-mono)' }}>Filters</span>
+          <span className="hidden xl:inline" style={{ fontFamily: 'var(--font-mono)' }}>Filters</span>
         </button>
 
         {/* Filter dropdown */}

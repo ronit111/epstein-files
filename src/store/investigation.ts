@@ -72,6 +72,8 @@ export const useInvestigationStore = create<InvestigationState>((set, get) => ({
   navigationHistory: [],
   navigateToEntity: (id) => {
     const { selectedEntityId, navigationHistory } = get();
+    // No-op if already viewing this entity
+    if (id === selectedEntityId) return;
     const newHistory = selectedEntityId
       ? [...navigationHistory, selectedEntityId]
       : navigationHistory;

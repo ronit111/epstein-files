@@ -209,9 +209,19 @@ export function NetworkGraphPanel() {
   const handleNodeClick = useCallback(
     (node: GraphNode) => {
       navigateToEntity(node.id)
-      // Smooth camera transition to clicked node
-      graphRef.current?.centerAt(node.x, node.y, 600)
-      graphRef.current?.zoom(2.5, 600)
+      // Delay camera animation to let the detail panel layout reflow settle.
+      // Without this, centerAt targets pre-reflow coordinates and the node
+      // drifts off-center when the graph container shrinks.
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          const currentZoom = graphRef.current?.zoom() ?? 1
+          graphRef.current?.centerAt(node.x, node.y, 600)
+          // Only nudge zoom if very zoomed out; otherwise keep user's zoom level
+          if (currentZoom < 1.2) {
+            graphRef.current?.zoom(1.5, 600)
+          }
+        }, 50)
+      })
     },
     [navigateToEntity]
   )
@@ -262,9 +272,17 @@ export function NetworkGraphPanel() {
   return (
     <div
       ref={containerRef}
-      className="relative bg-[var(--color-surface)] overflow-hidden"
-      style={{ zIndex: 'var(--z-graph)' }}
+      className="relative overflow-hidden h-full"
+      style={{
+        zIndex: 'var(--z-graph)',
+        backgroundColor: 'var(--color-surface)',
+        backgroundImage: 'url("/images/court-filings-bg.svg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
     >
+
       {/* Film grain overlay */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.02]"
@@ -310,6 +328,8 @@ export function NetworkGraphPanel() {
         d3AlphaDecay={0.025}
         d3VelocityDecay={0.3}
         backgroundColor="transparent"
+        minZoom={0.5}
+        maxZoom={8}
         width={dimensions.width}
         height={dimensions.height}
       />

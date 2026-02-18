@@ -50,7 +50,7 @@ function TimelineEventCard({ event }: { event: TimelineEvent }) {
     <div
       role="button"
       tabIndex={0}
-      className="group relative pl-6 pb-6 cursor-pointer transition-opacity duration-300 focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-1 focus-visible:ring-offset-[var(--color-surface)] rounded"
+      className="group relative pl-6 pb-6 cursor-pointer transition-opacity duration-300 focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-1 focus-visible:ring-offset-[var(--color-surface)] rounded min-h-[44px]"
       style={{ opacity: isRelated ? 1 : 0.45 }}
       onMouseEnter={() => highlightTimelineEvent(event.id)}
       onMouseLeave={() => highlightTimelineEvent(null)}
