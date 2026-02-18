@@ -1,30 +1,30 @@
 import type { EntityType } from '@/types/entities';
 
-// Desaturated, documentary-feel entity colors
-// These read as faded evidence tags, not app UI
+// Entity colors — distinct enough to read instantly on dark canvas
+// Pushed saturation up from the archival palette so types are unmistakable
 export const ENTITY_COLORS: Record<EntityType, string> = {
-  person: '#c49a6c',       // Muted ochre — warm but restrained
-  organization: '#6b8aad', // Steel blue — institutional, cold
-  event: '#8b7e99',        // Muted violet — somber
-  document: '#9b8ec4',     // Muted lavender — paper/ink
-  location: '#6b8f6b',     // Muted sage — earthy, grounded
+  person: '#d4a55a',       // Warm amber — clearly warm, reads as "people"
+  organization: '#5b9bd5', // Medium blue — institutional, distinct from purple
+  event: '#8b7e99',        // Muted violet — timeline only, not on graph
+  document: '#b39ddb',     // Lavender — distinct from blue, reads as "paper"
+  location: '#66bb6a',     // Medium green — unmistakable, not sage-grey
 };
 
 export const ENTITY_COLORS_DIM: Record<EntityType, string> = {
-  person: '#c49a6c33',
-  organization: '#6b8aad33',
+  person: '#d4a55a33',
+  organization: '#5b9bd533',
   event: '#8b7e9933',
-  document: '#9b8ec433',
-  location: '#6b8f6b33',
+  document: '#b39ddb33',
+  location: '#66bb6a33',
 };
 
 // Glow colors for node bloom effect (slightly brighter, with transparency)
 export const ENTITY_COLORS_GLOW: Record<EntityType, string> = {
-  person: '#c49a6c22',
-  organization: '#6b8aad22',
+  person: '#d4a55a22',
+  organization: '#5b9bd522',
   event: '#8b7e9922',
-  document: '#9b8ec422',
-  location: '#6b8f6b22',
+  document: '#b39ddb22',
+  location: '#66bb6a22',
 };
 
 export const CATEGORY_LABELS: Record<EntityType, string> = {

@@ -4,13 +4,13 @@ import { getAllTimelineEvents } from '@/data/loader'
 import type { TimelineEvent, EventCategory } from '@/types/entities'
 
 const CATEGORY_COLORS: Record<EventCategory, string> = {
-  legal: '#c49a6c',
-  financial: '#6b8aad',
+  legal: '#d4a55a',
+  financial: '#5b9bd5',
   political: '#8b7e99',
   death: '#991b1b',
-  'document-release': '#9b8ec4',
-  media: '#6b8f6b',
-  investigation: '#c49a6c',
+  'document-release': '#b39ddb',
+  media: '#66bb6a',
+  investigation: '#d4a55a',
   arrest: '#991b1b',
 }
 

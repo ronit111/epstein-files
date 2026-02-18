@@ -1,16 +1,35 @@
+import { useState, useRef, useEffect } from 'react'
 import { useInvestigationStore } from '@/store/investigation'
 import { SearchBar } from '@/components/search/SearchBar'
 import { BreadcrumbTrail } from '@/components/navigation/BreadcrumbTrail'
 import { FilterControls } from '@/components/board/FilterControls'
 
 export function BoardHeader() {
-  const setIntroComplete = useInvestigationStore((s) => s.setIntroComplete)
   const resetAll = useInvestigationStore((s) => s.resetAll)
+  const [filtersOpen, setFiltersOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
 
-  const handleReplayIntro = () => {
-    setIntroComplete(false)
-    window.location.hash = ''
-  }
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    if (!filtersOpen) return
+    const handleClick = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setFiltersOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClick)
+    return () => document.removeEventListener('mousedown', handleClick)
+  }, [filtersOpen])
+
+  // Close on Escape
+  useEffect(() => {
+    if (!filtersOpen) return
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setFiltersOpen(false)
+    }
+    document.addEventListener('keydown', handleKey)
+    return () => document.removeEventListener('keydown', handleKey)
+  }, [filtersOpen])
 
   return (
     <header
@@ -44,19 +63,38 @@ export function BoardHeader() {
         <BreadcrumbTrail />
       </div>
 
-      {/* Filters — hidden on mobile */}
-      <div className="hidden md:block">
-        <FilterControls />
-      </div>
+      {/* Filter toggle button */}
+      <div className="relative shrink-0" ref={dropdownRef}>
+        <button
+          onClick={() => setFiltersOpen(!filtersOpen)}
+          className="flex items-center gap-1.5 px-2 py-1.5 rounded text-xs transition-all focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)]"
+          style={{
+            color: filtersOpen ? 'var(--color-text-primary)' : 'var(--color-text-muted)',
+            backgroundColor: filtersOpen ? 'var(--color-surface-overlay)' : 'transparent',
+          }}
+          aria-expanded={filtersOpen}
+          aria-haspopup="true"
+          aria-label="Toggle filters"
+          title="Filters"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+            <path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z" />
+          </svg>
+          <span className="hidden lg:inline" style={{ fontFamily: 'var(--font-mono)' }}>Filters</span>
+        </button>
 
-      {/* Replay intro */}
-      <button
-        onClick={handleReplayIntro}
-        className="text-xs text-[var(--color-text-muted)] hover:text-[var(--color-text-secondary)] transition-colors shrink-0"
-        title="Replay introduction"
-      >
-        Intro
-      </button>
+        {/* Filter dropdown */}
+        {filtersOpen && (
+          <div
+            className="absolute right-0 top-full mt-1 bg-[var(--color-surface-raised)] border border-[var(--color-ink-lighter)] rounded-lg shadow-lg p-3 min-w-[200px]"
+            style={{ zIndex: 50 }}
+            role="dialog"
+            aria-label="Filter controls"
+          >
+            <FilterControls />
+          </div>
+        )}
+      </div>
     </header>
   )
 }

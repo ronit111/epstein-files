@@ -33,11 +33,11 @@ An interactive documentary investigation into the Jeffrey Epstein case. A web ap
 | Text muted | Zinc 500 | `#71717a` |
 
 ### Entity Type Colors (Graph Nodes — desaturated, archival)
-- Person: Muted ochre `#c49a6c`
-- Organization: Steel blue `#6b8aad`
-- Event: Muted violet `#8b7e99`
-- Document: Muted lavender `#9b8ec4`
-- Location: Muted sage `#6b8f6b`
+- Person: Warm amber `#d4a55a`
+- Organization: Medium blue `#5b9bd5`
+- Event: Muted violet `#8b7e99` (timeline only, not on graph)
+- Document: Lavender `#b39ddb`
+- Location: Medium green `#66bb6a`
 
 Each entity color has a `_DIM` variant (50% + `44` alpha) and a `_GLOW` variant (`22` alpha) for graph bloom effects.
 
