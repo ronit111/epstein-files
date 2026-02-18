@@ -22,18 +22,21 @@ export function NetworkGraphPanel() {
   const hoverEntity = useInvestigationStore((s) => s.hoverEntity)
 
   // Build and filter graph data
+  // verifiedOnly is handled visually in paintLink, not structurally —
+  // removing links from the force simulation scatters nodes chaotically
   const fullGraphData = useMemo(() => buildGraphData(), [])
   const graphData = useMemo(
     () =>
       filterGraphData(fullGraphData, {
         entityTypes: filters.entityTypes,
         significanceMin: filters.significanceMin,
-        verifiedOnly: filters.verifiedOnly,
+        verifiedOnly: false, // always keep all links for stable physics
         timelineRange,
         searchQuery: filters.searchQuery,
       }),
     [fullGraphData, filters, timelineRange]
   )
+  const verifiedOnly = filters.verifiedOnly
 
   // Get connected node IDs for highlighting
   const connectedNodeIds = useMemo(() => {
@@ -164,6 +167,10 @@ export function NetworkGraphPanel() {
       const tgt = typeof link.target === 'object' ? link.target : { id: link.target, x: 0, y: 0 }
       if (!Number.isFinite(src.x) || !Number.isFinite(src.y) || !Number.isFinite(tgt.x) || !Number.isFinite(tgt.y)) return
 
+      // When "verified only" is active, hide unverified links visually
+      // (they stay in the force simulation to keep node positions stable)
+      if (verifiedOnly && !link.verified) return
+
       const isConnected =
         connectedNodeIds.has(src.id) && connectedNodeIds.has(tgt.id)
 
@@ -194,7 +201,7 @@ export function NetworkGraphPanel() {
       ctx.stroke()
       ctx.setLineDash([])
     },
-    [connectedNodeIds, hasHighlight]
+    [connectedNodeIds, hasHighlight, verifiedOnly]
   )
 
   const handleNodeClick = useCallback(
