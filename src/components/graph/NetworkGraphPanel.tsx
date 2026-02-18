@@ -66,6 +66,7 @@ export function NetworkGraphPanel() {
   // Custom node rendering — glow + bloom + label
   const paintNode = useCallback(
     (node: GraphNode, ctx: CanvasRenderingContext2D, globalScale: number) => {
+      if (!Number.isFinite(node.x) || !Number.isFinite(node.y)) return
       const baseSize = NODE_SIZES[node.significance] || 6
       const isHighlighted = connectedNodeIds.has(node.id)
       const isSelected = node.id === selectedEntityId
@@ -161,6 +162,7 @@ export function NetworkGraphPanel() {
     (link: any, ctx: CanvasRenderingContext2D) => {
       const src = typeof link.source === 'object' ? link.source : { id: link.source, x: 0, y: 0 }
       const tgt = typeof link.target === 'object' ? link.target : { id: link.target, x: 0, y: 0 }
+      if (!Number.isFinite(src.x) || !Number.isFinite(src.y) || !Number.isFinite(tgt.x) || !Number.isFinite(tgt.y)) return
 
       const isConnected =
         connectedNodeIds.has(src.id) && connectedNodeIds.has(tgt.id)
