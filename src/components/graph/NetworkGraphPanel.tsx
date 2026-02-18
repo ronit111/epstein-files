@@ -1,12 +1,15 @@
+/* eslint-disable @typescript-eslint/no-explicit-any -- react-force-graph-2d types are untyped */
 import { useRef, useMemo, useCallback, useEffect, useState } from 'react'
 import ForceGraph2D from 'react-force-graph-2d'
 import { useInvestigationStore } from '@/store/investigation'
 import { buildGraphData, filterGraphData } from '@/data/graph-builder'
 import { ENTITY_COLORS, ENTITY_COLORS_DIM, ENTITY_COLORS_GLOW, NODE_SIZES } from '@/utils/colors'
-import type { GraphNode, GraphLink } from '@/types/entities'
+import type { GraphNode } from '@/types/entities'
 
 // Ambient pulse — nodes breathe subtly to feel alive
 let animFrame = 0
+// Tracks the last entity centered by a graph click (avoids double-centering)
+let lastGraphClickEntity: string | null = null
 
 export function NetworkGraphPanel() {
   const graphRef = useRef<any>(null)
@@ -208,15 +211,14 @@ export function NetworkGraphPanel() {
 
   const handleNodeClick = useCallback(
     (node: GraphNode) => {
+      // Mark as graph-click so the cross-panel center effect doesn't double-fire
+      lastGraphClickEntity = node.id
       navigateToEntity(node.id)
       // Delay camera animation to let the detail panel layout reflow settle.
-      // Without this, centerAt targets pre-reflow coordinates and the node
-      // drifts off-center when the graph container shrinks.
       requestAnimationFrame(() => {
         setTimeout(() => {
           const currentZoom = graphRef.current?.zoom() ?? 1
           graphRef.current?.centerAt(node.x, node.y, 600)
-          // Only nudge zoom if very zoomed out; otherwise keep user's zoom level
           if (currentZoom < 1.2) {
             graphRef.current?.zoom(1.5, 600)
           }
@@ -247,6 +249,24 @@ export function NetworkGraphPanel() {
     }, 800)
     return () => clearTimeout(timer)
   }, [])
+
+  // Center graph when entity is selected from search/timeline (cross-panel navigation).
+  // Skips if the selection came from a graph click (handleNodeClick sets lastGraphClickEntity).
+  useEffect(() => {
+    if (!selectedEntityId || selectedEntityId === lastGraphClickEntity) return
+    const node = graphData.nodes.find((n) => n.id === selectedEntityId) as any
+    if (!node || !Number.isFinite(node.x) || !Number.isFinite(node.y)) return
+
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        graphRef.current?.centerAt(node.x, node.y, 600)
+        const currentZoom = graphRef.current?.zoom() ?? 1
+        if (currentZoom < 1.2) {
+          graphRef.current?.zoom(1.5, 600)
+        }
+      }, 50)
+    })
+  }, [selectedEntityId, graphData.nodes])
 
   // Configure d3 forces for natural clustering
   useEffect(() => {

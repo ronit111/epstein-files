@@ -1,4 +1,4 @@
-import type { Entity, PersonEntity, OrganizationEntity, EventEntity, DocumentEntity, LocationEntity, TimelineEvent } from '@/types/entities';
+import type { Entity, PersonEntity, OrganizationEntity, DocumentEntity, LocationEntity, TimelineEvent } from '@/types/entities';
 
 // Static imports — Vite bundles these at build time
 import peopleData from '@data/entities/people.json';

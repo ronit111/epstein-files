@@ -65,10 +65,10 @@ export function InvestigationBoard() {
               transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
               className="absolute inset-0 z-20"
             >
-              {/* Tap-to-dismiss backdrop (top sliver) */}
+              {/* Tap-to-dismiss backdrop (top sliver) — z-30 to sit above DetailPanel sticky header */}
               <button
                 onClick={() => selectEntity(null)}
-                className="absolute top-0 left-0 right-0 h-12 z-10"
+                className="absolute top-0 left-0 right-0 h-12 z-30"
                 aria-label="Close detail panel"
               />
               <DetailPanel />

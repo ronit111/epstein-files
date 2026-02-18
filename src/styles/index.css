@@ -54,11 +54,14 @@
   scrollbar-color: var(--color-ink-lighter) transparent;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--color-surface);
   color: var(--color-text-primary);
-  overflow-x: hidden;
 }
 
 /* Selection color — cold, functional */

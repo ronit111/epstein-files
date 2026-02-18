@@ -90,7 +90,7 @@ export function DetailPanel() {
     if (entity && panelRef.current) {
       panelRef.current.focus()
     }
-  }, [entity?.id])
+  }, [entity])
 
   if (!entity) return null
 
@@ -304,9 +304,20 @@ export function DetailPanel() {
                   >
                     {source.reliability}
                   </span>
-                  <span className="text-sm text-[var(--color-text-secondary)]">
-                    {source.label}
-                  </span>
+                  {source.url ? (
+                    <a
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] underline underline-offset-2 decoration-[var(--color-ink-lighter)] hover:decoration-[var(--color-accent)] transition-colors"
+                    >
+                      {source.label}
+                    </a>
+                  ) : (
+                    <span className="text-sm text-[var(--color-text-secondary)]">
+                      {source.label}
+                    </span>
+                  )}
                 </div>
               ))}
             </div>

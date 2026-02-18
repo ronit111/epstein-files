@@ -6,6 +6,7 @@ import { FilterControls } from '@/components/board/FilterControls'
 
 export function BoardHeader() {
   const resetAll = useInvestigationStore((s) => s.resetAll)
+  const setIntroComplete = useInvestigationStore((s) => s.setIntroComplete)
   const [filtersOpen, setFiltersOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
@@ -21,14 +22,18 @@ export function BoardHeader() {
     return () => document.removeEventListener('mousedown', handleClick)
   }, [filtersOpen])
 
-  // Close on Escape
+  // Close on Escape — stopImmediatePropagation prevents App.tsx's
+  // Escape handler from also closing the detail panel simultaneously.
   useEffect(() => {
     if (!filtersOpen) return
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setFiltersOpen(false)
+      if (e.key === 'Escape') {
+        e.stopImmediatePropagation()
+        setFiltersOpen(false)
+      }
     }
-    document.addEventListener('keydown', handleKey)
-    return () => document.removeEventListener('keydown', handleKey)
+    document.addEventListener('keydown', handleKey, true)
+    return () => document.removeEventListener('keydown', handleKey, true)
   }, [filtersOpen])
 
   return (
@@ -39,9 +44,13 @@ export function BoardHeader() {
     >
       {/* Logo / Title */}
       <button
-        onClick={resetAll}
+        onClick={() => {
+          resetAll()
+          setIntroComplete(false)
+          window.location.hash = ''
+        }}
         className="flex items-center gap-2 shrink-0 group min-h-[44px]"
-        aria-label="Reset investigation board"
+        aria-label="Return to introduction"
       >
         <div className="w-2 h-2 rounded-full bg-[var(--color-accent)] group-hover:shadow-[0_0_8px_var(--color-accent)] transition-shadow" />
         <h1

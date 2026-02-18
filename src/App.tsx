@@ -11,10 +11,11 @@ export default function App() {
   const introComplete = useInvestigationStore((s) => s.introComplete)
   const selectedEntityId = useInvestigationStore((s) => s.selectedEntityId)
   const selectEntity = useInvestigationStore((s) => s.selectEntity)
-  const navigateToEntity = useInvestigationStore((s) => s.navigateToEntity)
   const setIntroComplete = useInvestigationStore((s) => s.setIntroComplete)
 
   // Deep linking: read entity from URL hash on mount + browser back/forward
+  // Uses selectEntity (not navigateToEntity) so browser back/forward restores
+  // state without building breadcrumb history.
   useEffect(() => {
     const syncFromHash = () => {
       const hash = window.location.hash.slice(1)
@@ -24,13 +25,13 @@ export default function App() {
       }
       if (hash && getEntity(hash)) {
         setIntroComplete(true)
-        navigateToEntity(hash)
+        selectEntity(hash)
       }
     }
     syncFromHash()
     window.addEventListener('hashchange', syncFromHash)
     return () => window.removeEventListener('hashchange', syncFromHash)
-  }, [])
+  }, [selectEntity, setIntroComplete])
 
   // Deep linking: update URL hash when entity changes
   useEffect(() => {

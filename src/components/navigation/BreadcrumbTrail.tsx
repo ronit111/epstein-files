@@ -14,7 +14,7 @@ export function BreadcrumbTrail() {
   return (
     <nav className="flex items-center gap-1 text-xs overflow-x-auto scrollbar-none" aria-label="Navigation history">
       {items.map((entity, index) => (
-        <div key={entity!.id} className="flex items-center gap-1 shrink-0">
+        <div key={`${entity!.id}-${index}`} className="flex items-center gap-1 shrink-0">
           <button
             onClick={() => navigateToHistoryIndex(index)}
             className="text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors truncate max-w-[120px] focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] rounded"

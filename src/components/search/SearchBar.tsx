@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from 'react'
+import { useState, useRef, useEffect, useCallback, useMemo } from 'react'
 import { searchEntities } from '@/data/search-index'
 import { useInvestigationStore } from '@/store/investigation'
 import { ENTITY_COLORS } from '@/utils/colors'
@@ -6,24 +6,16 @@ import type { Entity } from '@/types/entities'
 
 export function SearchBar() {
   const [query, setQuery] = useState('')
-  const [results, setResults] = useState<Entity[]>([])
   const [isOpen, setIsOpen] = useState(false)
   const [activeIndex, setActiveIndex] = useState(-1)
   const inputRef = useRef<HTMLInputElement>(null)
   const navigateToEntity = useInvestigationStore((s) => s.navigateToEntity)
 
-  useEffect(() => {
-    if (query.length >= 2) {
-      const matches = searchEntities(query)
-      setResults(matches)
-      setIsOpen(true)
-      setActiveIndex(-1)
-    } else {
-      setResults([])
-      setIsOpen(false)
-      setActiveIndex(-1)
-    }
-  }, [query])
+  // Derive results from query — no useEffect setState cascade
+  const results = useMemo(
+    () => (query.length >= 2 ? searchEntities(query) : []),
+    [query]
+  )
 
   // Cmd+K / Ctrl+K global shortcut to focus search
   useEffect(() => {
@@ -78,7 +70,12 @@ export function SearchBar() {
           ref={inputRef}
           type="text"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) => {
+            const val = e.target.value
+            setQuery(val)
+            setIsOpen(val.length >= 2)
+            setActiveIndex(-1)
+          }}
           onFocus={() => results.length > 0 && setIsOpen(true)}
           onBlur={() => setTimeout(() => setIsOpen(false), 200)}
           onKeyDown={handleKeyDown}
