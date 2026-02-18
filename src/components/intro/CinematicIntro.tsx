@@ -72,21 +72,32 @@ export function CinematicIntro() {
 
   return (
     <div ref={containerRef} className="relative">
-      {/* Ambient background — scattered dots that represent the network */}
+      {/* Film grain texture overlay */}
+      <div
+        className="fixed inset-0 pointer-events-none opacity-[0.03]"
+        style={{
+          zIndex: 100,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+          backgroundRepeat: 'repeat',
+          mixBlendMode: 'overlay',
+        }}
+      />
+
+      {/* Ambient background — scattered dim points representing the network */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 0 }}>
-        {Array.from({ length: 80 }).map((_, i) => (
+        {Array.from({ length: 60 }).map((_, i) => (
           <div
             key={i}
             className="absolute rounded-full"
             style={{
-              width: Math.random() * 4 + 2 + 'px',
-              height: Math.random() * 4 + 2 + 'px',
+              width: Math.random() * 3 + 1 + 'px',
+              height: Math.random() * 3 + 1 + 'px',
               left: Math.random() * 100 + '%',
               top: Math.random() * 100 + '%',
-              backgroundColor: '#f59e0b',
-              opacity: Math.random() * 0.3 + 0.05,
-              animation: `pulse-glow ${3 + Math.random() * 4}s ease-in-out infinite`,
-              animationDelay: Math.random() * 3 + 's',
+              backgroundColor: '#a1a1aa',
+              opacity: Math.random() * 0.2 + 0.03,
+              animation: `pulse-glow ${4 + Math.random() * 5}s ease-in-out infinite`,
+              animationDelay: Math.random() * 4 + 's',
             }}
           />
         ))}
@@ -122,7 +133,7 @@ export function CinematicIntro() {
             {section.stat && (
               <div className="mt-4">
                 <span
-                  className="text-6xl md:text-8xl font-bold text-[var(--color-amber-accent)] block mb-4"
+                  className="text-6xl md:text-8xl font-bold text-[var(--color-text-primary)] block mb-4"
                   style={{ fontFamily: 'var(--font-display)' }}
                 >
                   {section.stat.value}
@@ -150,11 +161,11 @@ export function CinematicIntro() {
           </p>
           <button
             onClick={handleBeginInvestigation}
-            className="group relative px-12 py-4 border border-[var(--color-amber-accent)] text-[var(--color-amber-accent)] text-lg tracking-wider uppercase transition-all duration-500 hover:bg-[var(--color-amber-accent)] hover:text-[var(--color-ink)]"
+            className="group relative px-12 py-4 border border-[var(--color-accent)] text-[var(--color-accent)] text-lg tracking-wider uppercase transition-all duration-500 hover:bg-[var(--color-accent)] hover:text-[var(--color-ink)]"
             style={{ fontFamily: 'var(--font-mono)' }}
           >
             <span className="relative z-10">Enter</span>
-            <div className="absolute inset-0 bg-[var(--color-amber-glow)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-[var(--color-accent-glow)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </button>
         </div>
       </section>

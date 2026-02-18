@@ -24,25 +24,26 @@ export function FilterControls() {
   }
 
   return (
-    <div className="flex items-center gap-2 shrink-0">
+    <div className="flex items-center gap-2 shrink-0" role="toolbar" aria-label="Entity filters">
       {ENTITY_TYPES.map((type) => {
         const active = filters.entityTypes.includes(type)
         return (
           <button
             key={type}
             onClick={() => toggleEntityType(type)}
-            className="flex items-center gap-1.5 px-2 py-1 rounded text-xs transition-all"
+            aria-pressed={active}
+            className="flex items-center gap-1.5 px-2 py-1 rounded text-xs transition-all focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)]"
             style={{
-              opacity: active ? 1 : 0.35,
+              opacity: active ? 1 : 0.55,
               color: active ? ENTITY_COLORS[type] : 'var(--color-text-muted)',
             }}
-            title={`Toggle ${CATEGORY_LABELS[type]}`}
+            title={`${active ? 'Hide' : 'Show'} ${CATEGORY_LABELS[type]}`}
           >
             <div
               className="w-2 h-2 rounded-full transition-all"
               style={{
                 backgroundColor: ENTITY_COLORS[type],
-                opacity: active ? 1 : 0.3,
+                opacity: active ? 1 : 0.4,
               }}
             />
             <span className="hidden lg:inline">{CATEGORY_LABELS[type]}</span>
@@ -52,13 +53,14 @@ export function FilterControls() {
       <div className="w-px h-4 bg-[var(--color-ink-lighter)] mx-1" />
       <button
         onClick={toggleVerified}
-        className="flex items-center gap-1 px-2 py-1 rounded text-xs transition-all"
+        aria-pressed={filters.verifiedOnly}
+        className="flex items-center gap-1 px-2 py-1 rounded text-xs transition-all focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)]"
         style={{
-          color: filters.verifiedOnly ? 'var(--color-amber-accent)' : 'var(--color-text-muted)',
+          color: filters.verifiedOnly ? 'var(--color-accent)' : 'var(--color-text-muted)',
         }}
         title="Show only court-verified connections"
       >
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
           <path d="M2 6l3 3 5-6" />
         </svg>
         <span className="hidden lg:inline">Verified</span>

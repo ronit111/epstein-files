@@ -110,10 +110,10 @@
       {
         "targetId": "person-black",
         "relationship": "financial advisor / consultant to",
-        "reverseRelationship": "client / paid over $150M to",
+        "reverseRelationship": "client / paid $158M to",
         "strength": 1,
         "verified": true,
-        "description": "Black paid Epstein over $150 million from 2012-2017 for tax and estate planning",
+        "description": "Black paid Epstein $158 million from 2012-2017 for tax and estate planning",
         "sources": [{ "label": "Apollo Global Management review", "reliability": "primary" }],
         "timeRange": { "start": "2012", "end": "2017" }
       },
@@ -145,7 +145,7 @@
         "verified": true,
         "description": "Barak visited Epstein's apartment dozens of times; extensive correspondence documented in DOJ releases",
         "sources": [{ "label": "DOJ document releases (2025)", "reliability": "primary" }],
-        "timeRange": { "start": "2015", "end": "2019" }
+        "timeRange": { "start": "2003", "end": "2019" }
       }
     ],
     "timelineEvents": [
@@ -168,7 +168,7 @@
     "role": "Convicted co-conspirator — recruited and groomed victims",
     "category": "central",
     "dateOfBirth": "1961-12-25",
-    "nationality": "British",
+    "nationality": "British, French, American",
     "keyPositions": ["Socialite", "Convicted sex trafficker"],
     "sources": [
       { "label": "USA v. Maxwell, 20 Cr. 330 (SDNY)", "reliability": "primary" },
@@ -214,7 +214,7 @@
     "type": "person",
     "name": "Virginia Giuffre",
     "shortDescription": "Epstein's most prominent accuser, who sued Maxwell and Prince Andrew. Died April 25, 2025.",
-    "detailedDescription": "Virginia Roberts Giuffre (1983-2025) was the most publicly prominent survivor of Epstein's trafficking network. Recruited at age 16 while working at Mar-a-Lago in 2000, she alleged that Epstein and Maxwell sexually exploited her and trafficked her to other men including Prince Andrew. Her defamation suit against Maxwell (Giuffre v. Maxwell, filed 2015) produced the sealed documents whose unsealing in 2024 revealed dozens of names connected to Epstein. She settled a separate civil suit against Prince Andrew in February 2022, in which Andrew acknowledged Epstein's trafficking of 'countless young girls.' Giuffre died on April 25, 2025, in Western Australia. Her family disputed the reported cause of death.",
+    "detailedDescription": "Virginia Roberts Giuffre (1983-2025) was the most publicly prominent survivor of Epstein's trafficking network. Recruited at age 16 while working at Mar-a-Lago in 2000, she alleged that Epstein and Maxwell sexually exploited her and trafficked her to other men including Prince Andrew. Her defamation suit against Maxwell (Giuffre v. Maxwell, filed 2015) produced the sealed documents whose unsealing in 2024 revealed dozens of names connected to Epstein. She settled a separate civil suit against Prince Andrew in February 2022, in which Andrew acknowledged Epstein's trafficking of 'countless young girls.' Giuffre died by suicide on April 25, 2025, in Western Australia.",
     "tags": ["victim", "plaintiff", "public-advocate", "deceased"],
     "significance": 1,
     "role": "Victim, plaintiff, and public advocate",
@@ -494,15 +494,15 @@
     "type": "person",
     "name": "Jean-Luc Brunel",
     "shortDescription": "French modeling agent who recruited young women for Epstein; died in Paris jail in February 2022.",
-    "detailedDescription": "Jean-Luc Brunel (1946-2022) was a French modeling agent and founder of MC2 Model Management, which was financed by Jeffrey Epstein. Brunel had a decades-long history of sexual misconduct allegations in the modeling industry predating his known association with Epstein. Court filings and victim testimony alleged he exploited underage girls from disadvantaged backgrounds by offering them modeling jobs, then brought them to the U.S. and 'farmed them out to his friends, especially Epstein.' Virginia Giuffre specifically named Brunel in her deposition as someone to whom she was trafficked. Brunel was arrested in France on June 29, 2021, and charged with drugging and raping a 17-year-old girl in the 1990s. He was found dead by hanging in his cell at La Sante Prison in Paris on February 19, 2022, in an apparent suicide.",
+    "detailedDescription": "Jean-Luc Brunel (1946-2022) was a French modeling agent and founder of MC2 Model Management, which was financed by Jeffrey Epstein. Brunel had a decades-long history of sexual misconduct allegations in the modeling industry predating his known association with Epstein. Court filings and victim testimony alleged he exploited underage girls from disadvantaged backgrounds by offering them modeling jobs, then brought them to the U.S. and 'farmed them out to his friends, especially Epstein.' Virginia Giuffre specifically named Brunel in her deposition as someone to whom she was trafficked. Brunel was arrested at Charles de Gaulle Airport in Paris on December 16, 2020, and subsequently charged with rape of minors and sexual harassment. He was found dead by hanging in his cell at La Sante Prison in Paris on February 19, 2022, in an apparent suicide.",
     "tags": ["inner-circle", "modeling-industry", "deceased", "charged", "co-conspirator"],
     "significance": 1,
     "role": "Modeling agent, alleged co-conspirator",
     "category": "enabler",
-    "dateOfBirth": "1946-11-19",
+    "dateOfBirth": "1946-09-18",
     "dateOfDeath": "2022-02-19",
     "nationality": "French",
-    "keyPositions": ["Founder of MC2 Model Management", "Modeling agent"],
+    "keyPositions": ["Co-founder of MC2 Model Management", "Modeling agent"],
     "sources": [
       { "label": "French judicial investigation records", "reliability": "primary" },
       { "label": "Giuffre deposition testimony", "reliability": "primary" },
@@ -530,7 +530,7 @@
         "relationship": "associated with",
         "reverseRelationship": "associated with",
         "strength": 2,
-        "verified": true,
+        "verified": false,
         "sources": [{ "label": "French investigation", "reliability": "secondary" }]
       }
     ],
@@ -830,7 +830,7 @@
     "type": "person",
     "name": "Donald Trump",
     "shortDescription": "Former U.S. President with documented social relationship with Epstein in the 1990s-early 2000s.",
-    "detailedDescription": "Donald Trump, 45th and 47th President of the United States, had a documented social relationship with Jeffrey Epstein in the 1990s and early 2000s. Flight logs show Trump on at least seven flights on Epstein's planes in the 1990s between Palm Beach and New York. A December 2025 DOJ document release included an email from a federal prosecutor stating that flight records revealed Trump traveled on Epstein's jet 'many more times than previously has been reported.' Trump's name appears in Epstein's black book with multiple phone numbers. In 2002, Trump told New York Magazine that Epstein was 'terrific' and a 'lot of fun.' Their relationship reportedly soured, and an FBI memo released in 2026 documented a 2006 phone call in which Trump encouraged Palm Beach Police Chief Reiter in his investigation of Epstein. Trump has stated he was never close to Epstein and had a 'falling out' with him. No survivor has made public allegations of wrongdoing by Trump in connection with Epstein.",
+    "detailedDescription": "Donald Trump, 45th and 47th President of the United States, had a documented social relationship with Jeffrey Epstein in the 1990s and early 2000s. Flight logs show Trump on at least eight flights on Epstein's planes in the 1990s between Palm Beach and New York. A December 2025 DOJ document release included an email from a federal prosecutor stating that flight records revealed Trump traveled on Epstein's jet 'many more times than previously has been reported.' Trump's name appears in Epstein's black book with multiple phone numbers. In 2002, Trump told New York Magazine that Epstein was 'terrific' and a 'lot of fun.' Their relationship reportedly soured, and an FBI memo released in 2026 documented a 2006 phone call in which Trump encouraged Palm Beach Police Chief Reiter in his investigation of Epstein. Trump has stated he was never close to Epstein and had a 'falling out' with him. No survivor has made public allegations of wrongdoing by Trump in connection with Epstein.",
     "tags": ["political", "flight-logs", "black-book", "social-connection", "no-allegations"],
     "significance": 2,
     "role": "Former and current U.S. President — documented social relationship",
@@ -846,11 +846,11 @@
     "connections": [
       {
         "targetId": "person-epstein",
-        "relationship": "social acquaintance; flew on aircraft of (at least 7 flights)",
+        "relationship": "social acquaintance; flew on aircraft of (at least 8 flights)",
         "reverseRelationship": "social acquaintance; hosted on aircraft",
         "strength": 2,
         "verified": true,
-        "description": "At least 7 flights in 1990s; social relationship in Palm Beach/NYC. No allegations of wrongdoing.",
+        "description": "At least 8 flights in 1990s; social relationship in Palm Beach/NYC. No allegations of wrongdoing.",
         "sources": [{ "label": "Flight manifests, DOJ releases", "reliability": "primary" }],
         "timeRange": { "start": "1993", "end": "2004" }
       },
@@ -907,9 +907,9 @@
         "reverseRelationship": "originally purchased by",
         "strength": 2,
         "verified": true,
-        "description": "Purchased 9 E. 71st St in 1989, transferred to Epstein",
+        "description": "Purchased 9 E. 71st St in 1989; formal deed transfer to Epstein recorded in 2011",
         "sources": [{ "label": "NYC property records", "reliability": "primary" }],
-        "timeRange": { "start": "1989", "end": "1998" }
+        "timeRange": { "start": "1989", "end": "2011" }
       }
     ],
     "timelineEvents": []
@@ -918,8 +918,8 @@
     "id": "person-black",
     "type": "person",
     "name": "Leon Black",
-    "shortDescription": "Apollo Global Management co-founder who paid Epstein over $150 million for advisory services.",
-    "detailedDescription": "Leon Black is an American billionaire and co-founder of Apollo Global Management, one of the world's largest private equity firms. From 2012 to 2017, Black paid Epstein more than $150 million for tax and estate-planning services, an amount that drew significant scrutiny given Epstein's 2008 conviction. Epstein also acted as an intermediary for Black's $5.5 million contribution to MIT. Through the shell company BV70 LLC, Black contributed $10 million to Epstein's nonprofit Gratitude America Ltd. in 2015. An independent review by the Dechert law firm found no evidence Black was involved in Epstein's criminal activities. Black stepped down as Apollo CEO in March 2021 after the extent of his financial relationship with Epstein became public, though he remained chairman until 2022.",
+    "shortDescription": "Apollo Global Management co-founder who paid Epstein $158 million for advisory services.",
+    "detailedDescription": "Leon Black is an American billionaire and co-founder of Apollo Global Management, one of the world's largest private equity firms. From 2012 to 2017, Black paid Epstein more than $150 million for tax and estate-planning services, an amount that drew significant scrutiny given Epstein's 2008 conviction. Epstein also acted as an intermediary for Black's $5.5 million contribution to MIT. Through the shell company BV70 LLC, Black contributed $10 million to Epstein's nonprofit Gratitude America Ltd. in 2015. An independent review by the Dechert law firm found no evidence Black was involved in Epstein's criminal activities. Black stepped down as both Apollo CEO and chairman in March 2021 after the extent of his financial relationship with Epstein became public.",
     "tags": ["billionaire", "financial-connection", "apollo", "advisory-fees"],
     "significance": 2,
     "role": "Billionaire investor — paid Epstein $150M+ for advisory services",
@@ -934,11 +934,11 @@
     "connections": [
       {
         "targetId": "person-epstein",
-        "relationship": "client / paid over $150M to",
+        "relationship": "client / paid $158M to",
         "reverseRelationship": "financial advisor / consultant to",
         "strength": 1,
         "verified": true,
-        "description": "Paid Epstein over $150 million from 2012-2017 for tax and estate planning",
+        "description": "Paid Epstein $158 million from 2012-2017 for tax and estate planning",
         "sources": [{ "label": "Apollo review, financial records", "reliability": "primary" }],
         "timeRange": { "start": "2012", "end": "2017" }
       },
@@ -1010,7 +1010,7 @@
         "reverseRelationship": "associate",
         "strength": 2,
         "verified": true,
-        "description": "Dozens of meetings; used Epstein-owned apartment in Manhattan 2015-2019; flew on private plane",
+        "description": "Dozens of meetings; used Epstein-owned apartment in Manhattan 2015-2019; flew on private plane. Relationship began around 2003.",
         "sources": [{ "label": "DOJ document releases", "reliability": "primary" }],
         "timeRange": { "start": "2003", "end": "2019" }
       }
@@ -1080,7 +1080,7 @@
         "strength": 1,
         "verified": true,
         "sources": [{ "label": "USVI government records", "reliability": "primary" }],
-        "timeRange": { "start": "2019", "end": "2023" }
+        "timeRange": { "start": "2019", "end": "2023-01" }
       },
       {
         "targetId": "doc-usvi-complaint",

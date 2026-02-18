@@ -2,25 +2,36 @@
 @import "./theme.css";
 
 @theme {
-  /* Investigation palette */
-  --color-ink: #0f172a;
-  --color-ink-light: #1e293b;
-  --color-ink-lighter: #334155;
-  --color-surface: #0f172a;
-  --color-surface-raised: #1e293b;
-  --color-surface-overlay: #1e293bcc;
+  /* Investigation palette — cold, clinical, documentary */
+  --color-ink: #09090b;
+  --color-ink-light: #18181b;
+  --color-ink-lighter: #27272a;
+  --color-surface: #09090b;
+  --color-surface-raised: #18181b;
+  --color-surface-overlay: #18181bcc;
 
-  --color-amber-accent: #f59e0b;
-  --color-amber-glow: #f59e0b33;
-  --color-red-flag: #ef4444;
-  --color-red-glow: #ef444433;
-  --color-blue-neutral: #64748b;
-  --color-green-location: #22c55e;
-  --color-purple-document: #a855f7;
+  /* Primary accent: cold off-white — like fluorescent light on a file */
+  --color-accent: #d4d4d8;
+  --color-accent-glow: #d4d4d81a;
+  --color-accent-bright: #e4e4e7;
 
-  --color-text-primary: #f8fafc;
-  --color-text-secondary: #94a3b8;
-  --color-text-muted: #64748b;
+  /* Legacy alias for amber-accent (used in components during migration) */
+  --color-amber-accent: #d4d4d8;
+  --color-amber-glow: #d4d4d81a;
+
+  /* Danger: muted crimson — rubber-stamp red, not alarm red */
+  --color-red-flag: #991b1b;
+  --color-red-glow: #991b1b33;
+
+  /* Desaturated entity colors — evidence tags, not app icons */
+  --color-blue-neutral: #71717a;
+  --color-green-location: #6b8f6b;
+  --color-purple-document: #9b8ec4;
+
+  /* Text: zinc scale, no blue undertones */
+  --color-text-primary: #fafafa;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #71717a;
 
   /* Typography scale */
   --font-display: "Playfair Display", Georgia, serif;
@@ -50,10 +61,19 @@ body {
   overflow-x: hidden;
 }
 
-/* Selection color */
+/* Selection color — cold, functional */
 ::selection {
-  background-color: var(--color-amber-accent);
-  color: var(--color-ink);
+  background-color: #3f3f46;
+  color: #fafafa;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Custom scrollbar for webkit */

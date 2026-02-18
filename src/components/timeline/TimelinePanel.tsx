@@ -4,14 +4,14 @@ import { getAllTimelineEvents } from '@/data/loader'
 import type { TimelineEvent, EventCategory } from '@/types/entities'
 
 const CATEGORY_COLORS: Record<EventCategory, string> = {
-  legal: '#f59e0b',
-  financial: '#3b82f6',
-  political: '#8b5cf6',
-  death: '#ef4444',
-  'document-release': '#a855f7',
-  media: '#22c55e',
-  investigation: '#f59e0b',
-  arrest: '#ef4444',
+  legal: '#c49a6c',
+  financial: '#6b8aad',
+  political: '#8b7e99',
+  death: '#991b1b',
+  'document-release': '#9b8ec4',
+  media: '#6b8f6b',
+  investigation: '#c49a6c',
+  arrest: '#991b1b',
 }
 
 function formatDate(dateStr: string): string {
@@ -33,18 +33,32 @@ function TimelineEventCard({ event }: { event: TimelineEvent }) {
     : true
   const isHighlighted = highlightedId === event.id
 
+  const handleClick = () => {
+    if (event.relatedEntityIds[0]) {
+      navigateToEntity(event.relatedEntityIds[0])
+    }
+  }
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      handleClick()
+    }
+  }
+
   return (
     <div
-      className="group relative pl-6 pb-6 cursor-pointer transition-opacity duration-300"
-      style={{ opacity: isRelated ? 1 : 0.25 }}
+      role="button"
+      tabIndex={0}
+      className="group relative pl-6 pb-6 cursor-pointer transition-opacity duration-300 focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-1 focus-visible:ring-offset-[var(--color-surface)] rounded"
+      style={{ opacity: isRelated ? 1 : 0.45 }}
       onMouseEnter={() => highlightTimelineEvent(event.id)}
       onMouseLeave={() => highlightTimelineEvent(null)}
-      onClick={() => {
-        // Navigate to first related entity
-        if (event.relatedEntityIds[0]) {
-          navigateToEntity(event.relatedEntityIds[0])
-        }
-      }}
+      onFocus={() => highlightTimelineEvent(event.id)}
+      onBlur={() => highlightTimelineEvent(null)}
+      onClick={handleClick}
+      onKeyDown={handleKeyDown}
+      aria-label={`${formatDate(event.date)}: ${event.title}`}
     >
       {/* Timeline line */}
       <div className="absolute left-[7px] top-0 bottom-0 w-px bg-[var(--color-ink-lighter)]" />
@@ -53,7 +67,7 @@ function TimelineEventCard({ event }: { event: TimelineEvent }) {
       <div
         className="absolute left-0 top-1 w-[15px] h-[15px] rounded-full border-2 transition-all duration-300"
         style={{
-          borderColor: CATEGORY_COLORS[event.category] || '#64748b',
+          borderColor: CATEGORY_COLORS[event.category] || '#71717a',
           backgroundColor: isHighlighted
             ? CATEGORY_COLORS[event.category]
             : 'var(--color-surface)',
@@ -65,14 +79,14 @@ function TimelineEventCard({ event }: { event: TimelineEvent }) {
 
       {/* Date */}
       <span
-        className="block text-[10px] text-[var(--color-text-muted)] mb-0.5 tracking-wider"
+        className="block text-[10px] text-[var(--color-text-secondary)] mb-0.5 tracking-wider"
         style={{ fontFamily: 'var(--font-mono)' }}
       >
         {formatDate(event.date)}
       </span>
 
       {/* Title */}
-      <h3 className="text-sm font-medium text-[var(--color-text-primary)] leading-tight mb-1 group-hover:text-[var(--color-amber-accent)] transition-colors">
+      <h3 className="text-sm font-medium text-[var(--color-text-primary)] leading-tight mb-1 group-hover:text-[var(--color-accent)] transition-colors">
         {event.title}
       </h3>
 
@@ -109,13 +123,14 @@ export function TimelinePanel() {
   const years = Object.keys(groupedEvents).sort()
 
   return (
-    <div
+    <nav
       className="h-full overflow-y-auto border-r border-[var(--color-ink-lighter)] bg-[var(--color-surface)]"
       style={{ zIndex: 'var(--z-timeline)' }}
+      aria-label="Case timeline"
     >
       <div className="p-4">
         <h2
-          className="text-xs font-semibold tracking-widest uppercase text-[var(--color-text-muted)] mb-6"
+          className="text-xs font-semibold tracking-widest uppercase text-[var(--color-text-secondary)] mb-6"
           style={{ fontFamily: 'var(--font-mono)' }}
         >
           Timeline
@@ -141,6 +156,6 @@ export function TimelinePanel() {
           </div>
         ))}
       </div>
-    </div>
+    </nav>
   )
 }

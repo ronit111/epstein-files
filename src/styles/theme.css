@@ -1,18 +1,18 @@
 /* Investigation Board — CSS Custom Properties */
 
 :root {
-  /* Entity type colors — used in graph nodes, badges, timeline markers */
-  --entity-person: #f59e0b;
-  --entity-organization: #3b82f6;
-  --entity-event: #8b5cf6;
-  --entity-document: #a855f7;
-  --entity-location: #22c55e;
+  /* Entity type colors — desaturated, documentary feel */
+  --entity-person: #c49a6c;
+  --entity-organization: #6b8aad;
+  --entity-event: #8b7e99;
+  --entity-document: #9b8ec4;
+  --entity-location: #6b8f6b;
 
   /* Connection states */
-  --connection-verified: #f59e0b;
-  --connection-reported: #64748b;
-  --connection-highlighted: #f59e0b;
-  --connection-dimmed: #334155;
+  --connection-verified: #a1a1aa;
+  --connection-reported: #3f3f46;
+  --connection-highlighted: #d4d4d8;
+  --connection-dimmed: #27272a;
 
   /* Significance levels */
   --significance-1: 1;      /* Central — largest nodes */
@@ -28,6 +28,7 @@
   --timeline-width: 280px;
   --detail-panel-width: 420px;
   --header-height: 56px;
+  --mobile-bottom-sheet: 60vh;
 
   /* Z-index layers */
   --z-graph: 1;
@@ -39,18 +40,37 @@
   --z-modal: 60;
 }
 
+/* Mobile overrides */
+@media (max-width: 768px) {
+  :root {
+    --timeline-width: 0px;
+    --detail-panel-width: 100%;
+    --header-height: 48px;
+  }
+}
+
 /* Ambient animation keyframes */
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 1; }
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
 }
 
 @keyframes breathe {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.6; }
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.5; }
 }
 
 @keyframes fade-in {
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Film grain overlay — adds texture to the dark background */
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  30% { transform: translate(3%, -15%); }
+  50% { transform: translate(12%, 9%); }
+  70% { transform: translate(9%, 4%); }
+  90% { transform: translate(-1%, 7%); }
 }

@@ -14,20 +14,23 @@ export function BoardHeader() {
 
   return (
     <header
-      className="h-[var(--header-height)] border-b border-[var(--color-ink-lighter)] bg-[var(--color-surface-raised)] flex items-center gap-4 px-4"
+      className="h-[var(--header-height)] border-b border-[var(--color-ink-lighter)] bg-[var(--color-surface-raised)] flex items-center gap-2 md:gap-4 px-3 md:px-4"
       style={{ zIndex: 'var(--z-header)' }}
+      role="banner"
     >
       {/* Logo / Title */}
       <button
         onClick={resetAll}
         className="flex items-center gap-2 shrink-0 group"
+        aria-label="Reset investigation board"
       >
-        <div className="w-2 h-2 rounded-full bg-[var(--color-amber-accent)] group-hover:shadow-[0_0_8px_var(--color-amber-accent)] transition-shadow" />
+        <div className="w-2 h-2 rounded-full bg-[var(--color-accent)] group-hover:shadow-[0_0_8px_var(--color-accent)] transition-shadow" />
         <h1
-          className="text-sm font-semibold tracking-widest uppercase text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)] transition-colors"
+          className="text-xs md:text-sm font-semibold tracking-widest uppercase text-[var(--color-text-secondary)] group-hover:text-[var(--color-text-primary)] transition-colors"
           style={{ fontFamily: 'var(--font-mono)' }}
         >
-          The Epstein Files
+          <span className="hidden sm:inline">The Epstein Files</span>
+          <span className="sm:hidden">TEF</span>
         </h1>
       </button>
 
@@ -36,13 +39,15 @@ export function BoardHeader() {
         <SearchBar />
       </div>
 
-      {/* Breadcrumbs */}
-      <div className="flex-1 overflow-hidden">
+      {/* Breadcrumbs — hidden on mobile */}
+      <div className="flex-1 overflow-hidden hidden md:block">
         <BreadcrumbTrail />
       </div>
 
-      {/* Filters */}
-      <FilterControls />
+      {/* Filters — hidden on mobile */}
+      <div className="hidden md:block">
+        <FilterControls />
+      </div>
 
       {/* Replay intro */}
       <button

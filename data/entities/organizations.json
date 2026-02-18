@@ -41,8 +41,8 @@
     "id": "org-deutsche-bank",
     "type": "organization",
     "name": "Deutsche Bank",
-    "shortDescription": "German bank that served as Epstein's bank from 2013 to 2018, fined $150M for compliance failures.",
-    "detailedDescription": "Deutsche Bank maintained a banking relationship with Jeffrey Epstein from August 2013 to December 2018, onboarding him as a client shortly after JP Morgan dropped him. The New York State Department of Financial Services fined Deutsche Bank $150 million in July 2020 for significant compliance failures, finding the bank processed hundreds of suspicious transactions totaling millions of dollars without adequate scrutiny, including payments to Epstein's alleged co-conspirators and settlement payments exceeding $7 million. Deutsche Bank separately settled with victims for $75 million in May 2023. The bank ended its Epstein relationship only after the Miami Herald's 'Perversion of Justice' series was published in November 2018.",
+    "shortDescription": "German bank that served as Epstein's bank from 2013 to 2019, fined $150M for compliance failures.",
+    "detailedDescription": "Deutsche Bank maintained a banking relationship with Jeffrey Epstein from August 2013, onboarding him as a client shortly after JP Morgan dropped him. Though the bank issued a termination notice in December 2018 following the Miami Herald's 'Perversion of Justice' series, it continued servicing Epstein's accounts until his arrest in July 2019. The New York State Department of Financial Services fined Deutsche Bank $150 million in July 2020 for significant compliance failures, finding the bank processed hundreds of suspicious transactions totaling millions of dollars without adequate scrutiny, including payments to Epstein's alleged co-conspirators and settlement payments exceeding $7 million. Deutsche Bank separately settled with victims for $75 million in May 2023.",
     "tags": ["banking", "financial-enabler", "fine", "compliance-failure"],
     "significance": 2,
     "category": "financial",
@@ -58,9 +58,9 @@
         "reverseRelationship": "banked with",
         "strength": 1,
         "verified": true,
-        "description": "Epstein was a client from 2013 to 2018",
+        "description": "Epstein was a client from 2013 to 2019; termination notice issued December 2018 but accounts remained active until arrest",
         "sources": [{ "label": "NY DFS Consent Order", "reliability": "primary" }],
-        "timeRange": { "start": "2013-08", "end": "2018-12" }
+        "timeRange": { "start": "2013-08", "end": "2019-07" }
       }
     ],
     "timelineEvents": [

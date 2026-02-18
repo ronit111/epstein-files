@@ -18,26 +18,28 @@ An interactive documentary investigation into the Jeffrey Epstein case. A web ap
 
 ## Visual Identity
 
-### Color Palette
+### Color Palette — "Cold Light on Black"
 | Role | Color | Hex |
 |------|-------|-----|
-| Background (base) | Dark slate | `#0f172a` |
-| Surface (raised) | Slate | `#1e293b` |
-| Primary accent | Amber | `#f59e0b` |
-| Danger / flagged | Red | `#ef4444` |
-| Neutral | Slate blue | `#64748b` |
-| Location | Green | `#22c55e` |
-| Document | Purple | `#a855f7` |
-| Text primary | Near-white | `#f8fafc` |
-| Text secondary | Slate | `#94a3b8` |
-| Text muted | Gray | `#64748b` |
+| Background (base) | Near-black | `#09090b` |
+| Surface (raised) | Zinc 900 | `#18181b` |
+| Surface overlay | Zinc 900/80 | `#18181bcc` |
+| Border / ink lighter | Zinc 800 | `#27272a` |
+| Primary accent | Cold off-white | `#d4d4d8` |
+| Accent glow | Off-white 10% | `#d4d4d81a` |
+| Danger / flagged | Muted crimson | `#991b1b` |
+| Text primary | Near-white | `#fafafa` |
+| Text secondary | Zinc 400 | `#a1a1aa` |
+| Text muted | Zinc 500 | `#71717a` |
 
-### Entity Type Colors (Graph Nodes)
-- Person: Amber `#f59e0b`
-- Organization: Blue `#3b82f6`
-- Event: Violet `#8b5cf6`
-- Document: Purple `#a855f7`
-- Location: Green `#22c55e`
+### Entity Type Colors (Graph Nodes — desaturated, archival)
+- Person: Muted ochre `#c49a6c`
+- Organization: Steel blue `#6b8aad`
+- Event: Muted violet `#8b7e99`
+- Document: Muted lavender `#9b8ec4`
+- Location: Muted sage `#6b8f6b`
+
+Each entity color has a `_DIM` variant (50% + `44` alpha) and a `_GLOW` variant (`22` alpha) for graph bloom effects.
 
 ### Typography
 | Use | Font | Weight |
@@ -51,7 +53,7 @@ An interactive documentary investigation into the Jeffrey Epstein case. A web ap
 2. **Breathing room**: Generous whitespace. 8rem+ between major sections. Never cramped.
 3. **Progressive disclosure**: Surface layer is scannable. Depth revealed by interaction. Three layers: short → detailed → deep dive.
 4. **Every element earns its place**: No decoration-only elements. Every node, timeline event, and connection is clickable and meaningful.
-5. **Dark immersive canvas**: Dark slate base. Selective amber illumination for focus. The darkness serves the investigative tone.
+5. **Dark immersive canvas**: Near-black base with zinc surfaces. Cold off-white accent — no warmth. The clinical coldness serves the investigative tone. Film grain texture overlay on graph and intro.
 6. **Animation with purpose**: Smooth transitions (0.5-0.8s). Nothing moves without communicating state change.
 7. **No generic icons**: Graph nodes use colored circles + level-of-detail rendering. UI uses custom line icons. No Material Design, no clipart.
 
