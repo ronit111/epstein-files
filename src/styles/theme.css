@@ -1,0 +1,56 @@
+/* Investigation Board — CSS Custom Properties */
+
+:root {
+  /* Entity type colors — used in graph nodes, badges, timeline markers */
+  --entity-person: #f59e0b;
+  --entity-organization: #3b82f6;
+  --entity-event: #8b5cf6;
+  --entity-document: #a855f7;
+  --entity-location: #22c55e;
+
+  /* Connection states */
+  --connection-verified: #f59e0b;
+  --connection-reported: #64748b;
+  --connection-highlighted: #f59e0b;
+  --connection-dimmed: #334155;
+
+  /* Significance levels */
+  --significance-1: 1;      /* Central — largest nodes */
+  --significance-2: 0.7;    /* Important */
+  --significance-3: 0.4;    /* Peripheral — smallest nodes */
+
+  /* Node sizes (px radius) */
+  --node-size-1: 12;
+  --node-size-2: 8;
+  --node-size-3: 5;
+
+  /* Panel dimensions */
+  --timeline-width: 280px;
+  --detail-panel-width: 420px;
+  --header-height: 56px;
+
+  /* Z-index layers */
+  --z-graph: 1;
+  --z-timeline: 10;
+  --z-detail: 20;
+  --z-header: 30;
+  --z-search-results: 40;
+  --z-intro: 50;
+  --z-modal: 60;
+}
+
+/* Ambient animation keyframes */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

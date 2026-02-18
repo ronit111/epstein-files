@@ -1,0 +1,33 @@
+[
+  {
+    "id": "intro-scale",
+    "headline": "A System, Not a Scandal",
+    "subtext": "What happened was not one man's crimes. It was a network that operated for decades, enabled by institutions that chose not to see.",
+    "visualType": "text-only"
+  },
+  {
+    "id": "intro-stat-victims",
+    "headline": "The Scope",
+    "statistic": { "value": "100+", "label": "identified victims across multiple jurisdictions" },
+    "visualType": "statistic"
+  },
+  {
+    "id": "intro-stat-documents",
+    "headline": "The Record",
+    "statistic": { "value": "207,000+", "label": "documents released by the DOJ across 12 data sets" },
+    "visualType": "statistic"
+  },
+  {
+    "id": "intro-stat-settlements",
+    "headline": "The Reckoning",
+    "statistic": { "value": "$575M+", "label": "in settlements from JP Morgan, Deutsche Bank, and Epstein's estate" },
+    "bodyText": "$290 million from JP Morgan. $75 million from Deutsche Bank. $105 million from the USVI estate suit. And still, only two people were ever criminally charged.",
+    "visualType": "statistic"
+  },
+  {
+    "id": "intro-transition",
+    "headline": "Every name sourced. Every connection documented. Every claim rated for reliability.",
+    "subtext": "This is the full picture, as far as the public record allows.",
+    "visualType": "transition"
+  }
+]

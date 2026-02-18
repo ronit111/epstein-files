@@ -1,0 +1,249 @@
+[
+  {
+    "id": "loc-little-st-james",
+    "type": "location",
+    "name": "Little St. James Island",
+    "shortDescription": "Private island in the U.S. Virgin Islands purchased by Epstein in 1998, central to trafficking allegations.",
+    "detailedDescription": "A 70-acre private island in the U.S. Virgin Islands purchased by Jeffrey Epstein for approximately $7.95 million in 1998. The island featured a main compound, guest houses, a blue-and-white striped temple-like structure, a helipad, and other buildings. Multiple victims testified that sexual abuse occurred on the island. The USVI Attorney General alleged that girls as young as 12 were trafficked there. The island, along with Great St. James, was sold to investor Stephen Deckoff in 2023 for a reported $60 million, with proceeds directed to victim compensation.",
+    "tags": ["property", "trafficking-site", "usvi", "island"],
+    "significance": 1,
+    "category": "island",
+    "coordinates": { "lat": 18.3000, "lng": -64.8253 },
+    "sources": [
+      { "label": "USVI AG Complaint (2020)", "reliability": "primary" },
+      { "label": "Properties of Jeffrey Epstein, Wikipedia", "url": "https://en.wikipedia.org/wiki/Properties_of_Jeffrey_Epstein", "reliability": "secondary" }
+    ],
+    "connections": [
+      {
+        "targetId": "person-epstein",
+        "relationship": "owned by",
+        "reverseRelationship": "owned property",
+        "strength": 1,
+        "verified": true,
+        "description": "Purchased in 1998 for $7.95 million",
+        "sources": [{ "label": "Property records", "reliability": "primary" }],
+        "timeRange": { "start": "1998", "end": "2019" }
+      },
+      {
+        "targetId": "org-usvi-ag",
+        "relationship": "subject of investigation by",
+        "reverseRelationship": "investigated activities at",
+        "strength": 1,
+        "verified": true,
+        "sources": [{ "label": "USVI AG Complaint", "reliability": "primary" }],
+        "timeRange": { "start": "2020" }
+      }
+    ],
+    "timelineEvents": [
+      { "eventId": "event-2020-usvi-lawsuit", "role": "subject property" }
+    ]
+  },
+  {
+    "id": "loc-manhattan-mansion",
+    "type": "location",
+    "name": "Manhattan Townhouse (9 E. 71st St)",
+    "shortDescription": "Epstein's Upper East Side mansion, originally purchased by Les Wexner, where abuse was documented.",
+    "detailedDescription": "The Herbert N. Straus House at 9 East 71st Street on Manhattan's Upper East Side, one of the largest private residences in New York City. Les Wexner purchased the property in 1989 for approximately $13 million. Epstein began living there around 1995 and acquired it from Wexner in 1998 for a reported $0 (later records suggest a transfer). Federal agents executing a search warrant after Epstein's 2019 arrest found a trove of photographic evidence including images of underage girls in a locked safe. The mansion was sold in 2021 for $51 million, with proceeds going toward victim compensation.",
+    "tags": ["property", "crime-scene", "manhattan", "search-warrant"],
+    "significance": 1,
+    "category": "residence",
+    "coordinates": { "lat": 40.7710, "lng": -73.9659 },
+    "address": "9 East 71st Street, New York, NY 10021",
+    "sources": [
+      { "label": "SDNY Search Warrant Execution (2019)", "reliability": "primary" },
+      { "label": "Property records, NYC", "reliability": "primary" }
+    ],
+    "connections": [
+      {
+        "targetId": "person-epstein",
+        "relationship": "owned by",
+        "reverseRelationship": "owned property",
+        "strength": 1,
+        "verified": true,
+        "sources": [{ "label": "Property records", "reliability": "primary" }],
+        "timeRange": { "start": "1995", "end": "2019" }
+      },
+      {
+        "targetId": "person-wexner",
+        "relationship": "originally purchased by",
+        "reverseRelationship": "originally owned property",
+        "strength": 2,
+        "verified": true,
+        "sources": [{ "label": "Property records", "reliability": "primary" }],
+        "timeRange": { "start": "1989", "end": "1998" }
+      }
+    ],
+    "timelineEvents": [
+      { "eventId": "event-2019-arrest", "role": "search warrant location" }
+    ]
+  },
+  {
+    "id": "loc-palm-beach",
+    "type": "location",
+    "name": "Palm Beach Mansion (358 El Brillo Way)",
+    "shortDescription": "Epstein's Palm Beach residence where the original 2005 police investigation began.",
+    "detailedDescription": "A 14,000-square-foot estate at 358 El Brillo Way in Palm Beach, Florida, purchased by Epstein in 1990 for $2.5 million. This was the location where the Palm Beach Police Department investigation began in March 2005, after a parent reported that her 14-year-old daughter had been molested there. Undercover operations and victim interviews established a pattern of abuse involving dozens of minor girls who were recruited to provide 'massages.' Epstein pleaded guilty to state charges related to conduct at this location in 2008. The property was sold in 2021 for $18.5 million and subsequently demolished by the new owner.",
+    "tags": ["property", "crime-scene", "palm-beach", "investigation-origin"],
+    "significance": 1,
+    "category": "residence",
+    "coordinates": { "lat": 26.7012, "lng": -80.0369 },
+    "address": "358 El Brillo Way, Palm Beach, FL 33480",
+    "sources": [
+      { "label": "Palm Beach PD Probable Cause Affidavit (2005)", "reliability": "primary" },
+      { "label": "Florida state court records", "reliability": "primary" }
+    ],
+    "connections": [
+      {
+        "targetId": "person-epstein",
+        "relationship": "owned by",
+        "reverseRelationship": "owned property",
+        "strength": 1,
+        "verified": true,
+        "sources": [{ "label": "Property records", "reliability": "primary" }],
+        "timeRange": { "start": "1990", "end": "2019" }
+      },
+      {
+        "targetId": "org-palm-beach-pd",
+        "relationship": "investigated by",
+        "reverseRelationship": "investigated activities at",
+        "strength": 1,
+        "verified": true,
+        "sources": [{ "label": "Palm Beach PD investigation files", "reliability": "primary" }],
+        "timeRange": { "start": "2005", "end": "2006" }
+      }
+    ],
+    "timelineEvents": [
+      { "eventId": "event-2005-pbpd-investigation", "role": "crime scene" },
+      { "eventId": "event-2008-guilty-plea", "role": "related property" }
+    ]
+  },
+  {
+    "id": "loc-zorro-ranch",
+    "type": "location",
+    "name": "Zorro Ranch",
+    "shortDescription": "Epstein's 7,600-acre ranch near Stanley, New Mexico, purchased in 1993.",
+    "detailedDescription": "A roughly 7,600-acre high-desert property near Stanley, New Mexico, purchased by Epstein in 1993. The main hacienda-style mansion was built in 1999. Approximately 1,200 acres were leased from the New Mexico State Land Office. Virginia Giuffre testified in depositions that abuse occurred at this property. The ranch was never publicly confirmed to have been searched by the FBI, a fact that drew scrutiny from investigators and journalists. It was sold in 2023 to San Rafael Ranch LLC, connected to Texas businessman Don Huffines. The New Mexico Attorney General opened a new investigation into activities at the ranch in 2024.",
+    "tags": ["property", "new-mexico", "ranch", "investigation"],
+    "significance": 2,
+    "category": "ranch",
+    "coordinates": { "lat": 35.1425, "lng": -105.9617 },
+    "address": "Near Stanley, New Mexico",
+    "sources": [
+      { "label": "Property records, New Mexico", "reliability": "primary" },
+      { "label": "Time Magazine reporting (2024)", "url": "https://time.com/7379228/epstein-zorro-ranch-investigation/", "reliability": "reporting" }
+    ],
+    "connections": [
+      {
+        "targetId": "person-epstein",
+        "relationship": "owned by",
+        "reverseRelationship": "owned property",
+        "strength": 1,
+        "verified": true,
+        "sources": [{ "label": "Property records", "reliability": "primary" }],
+        "timeRange": { "start": "1993", "end": "2023" }
+      }
+    ],
+    "timelineEvents": []
+  },
+  {
+    "id": "loc-great-st-james",
+    "type": "location",
+    "name": "Great St. James Island",
+    "shortDescription": "Adjacent island to Little St. James, purchased by Epstein in 2016.",
+    "detailedDescription": "A larger island adjacent to Little St. James in the U.S. Virgin Islands, purchased by Epstein in 2016 for approximately $18 million. Epstein began construction projects on the island, leading to disputes with the USVI government over environmental permits and unpermitted construction. The island was sold along with Little St. James to Stephen Deckoff in 2023 as part of the estate liquidation for victim compensation.",
+    "tags": ["property", "usvi", "island"],
+    "significance": 3,
+    "category": "island",
+    "coordinates": { "lat": 18.3167, "lng": -64.8333 },
+    "sources": [
+      { "label": "Property records, USVI", "reliability": "primary" },
+      { "label": "USVI AG Complaint (2020)", "reliability": "primary" }
+    ],
+    "connections": [
+      {
+        "targetId": "person-epstein",
+        "relationship": "owned by",
+        "reverseRelationship": "owned property",
+        "strength": 2,
+        "verified": true,
+        "sources": [{ "label": "Property records", "reliability": "primary" }],
+        "timeRange": { "start": "2016", "end": "2019" }
+      }
+    ],
+    "timelineEvents": []
+  },
+  {
+    "id": "loc-mcc-manhattan",
+    "type": "location",
+    "name": "Metropolitan Correctional Center (MCC)",
+    "shortDescription": "Federal detention facility in Manhattan where Epstein died on August 10, 2019.",
+    "detailedDescription": "A federal detention facility at 150 Park Row in lower Manhattan operated by the Bureau of Prisons. Jeffrey Epstein was held here following his July 2019 arrest on sex trafficking charges. On July 23, 2019, Epstein was found semiconscious in his cell with marks on his neck. He was placed on suicide watch but was removed from it approximately six days later. On August 10, 2019, Epstein was found dead in his cell, having hanged himself. A DOJ Inspector General report documented extensive failures: guards had not checked on Epstein for approximately eight hours, his cellmate had been transferred out the previous day, and surveillance cameras near his cell malfunctioned. The NYC Chief Medical Examiner ruled the death a suicide by hanging.",
+    "tags": ["prison", "death-location", "bop", "manhattan"],
+    "significance": 1,
+    "category": "institution",
+    "coordinates": { "lat": 40.7127, "lng": -74.0005 },
+    "address": "150 Park Row, New York, NY 10007",
+    "sources": [
+      { "label": "DOJ OIG Report on BOP Custody of Epstein", "url": "https://oig.justice.gov/sites/default/files/reports/23-085.pdf", "reliability": "primary" },
+      { "label": "NYC Chief Medical Examiner ruling", "reliability": "primary" }
+    ],
+    "connections": [
+      {
+        "targetId": "person-epstein",
+        "relationship": "detained and died at",
+        "reverseRelationship": "was detained and died at",
+        "strength": 1,
+        "verified": true,
+        "sources": [{ "label": "DOJ OIG Report", "reliability": "primary" }],
+        "timeRange": { "start": "2019-07-06", "end": "2019-08-10" }
+      },
+      {
+        "targetId": "org-bop",
+        "relationship": "operated by",
+        "reverseRelationship": "operated facility",
+        "strength": 2,
+        "verified": true,
+        "sources": [{ "label": "DOJ OIG Report", "reliability": "primary" }]
+      }
+    ],
+    "timelineEvents": [
+      { "eventId": "event-2019-death", "role": "location of death" }
+    ]
+  },
+  {
+    "id": "loc-paris-apartment",
+    "type": "location",
+    "name": "Paris Apartment (Avenue Foch)",
+    "shortDescription": "Epstein's Paris residence connected to Jean-Luc Brunel and European trafficking allegations.",
+    "detailedDescription": "An apartment on Avenue Foch in the 16th arrondissement of Paris, one of the most exclusive addresses in the city. The property was connected to Epstein's European activities and his relationship with French modeling agent Jean-Luc Brunel. Virginia Giuffre alleged in depositions that she was trafficked to this location. French authorities investigated activities at this address as part of their inquiry into Epstein and Brunel. Epstein was returning from Paris when he was arrested at Teterboro Airport in New Jersey on July 6, 2019.",
+    "tags": ["property", "paris", "france", "brunel-connection"],
+    "significance": 2,
+    "category": "residence",
+    "coordinates": { "lat": 48.8716, "lng": 2.2875 },
+    "address": "Avenue Foch, 75116 Paris, France",
+    "sources": [
+      { "label": "Giuffre deposition testimony", "reliability": "primary" },
+      { "label": "French judicial investigation records", "reliability": "secondary" }
+    ],
+    "connections": [
+      {
+        "targetId": "person-epstein",
+        "relationship": "owned by",
+        "reverseRelationship": "owned property",
+        "strength": 2,
+        "verified": true,
+        "sources": [{ "label": "Property records", "reliability": "secondary" }]
+      },
+      {
+        "targetId": "person-brunel",
+        "relationship": "associated with",
+        "reverseRelationship": "associated with property",
+        "strength": 2,
+        "verified": true,
+        "description": "Brunel had access to the apartment and used it in connection with modeling activities",
+        "sources": [{ "label": "French judicial investigation", "reliability": "secondary" }]
+      }
+    ],
+    "timelineEvents": []
+  }
+]
