@@ -23,20 +23,22 @@ export function NetworkGraphPanel() {
 
   // Build and filter graph data
   // verifiedOnly is handled visually in paintLink, not structurally —
-  // removing links from the force simulation scatters nodes chaotically
+  // removing links from the force simulation scatters nodes chaotically.
+  // Memo depends on individual filter fields (not the filters object) so
+  // toggling verifiedOnly doesn't restart the d3-force simulation.
   const fullGraphData = useMemo(() => buildGraphData(), [])
+  const { entityTypes, significanceMin, searchQuery, verifiedOnly } = filters
   const graphData = useMemo(
     () =>
       filterGraphData(fullGraphData, {
-        entityTypes: filters.entityTypes,
-        significanceMin: filters.significanceMin,
-        verifiedOnly: false, // always keep all links for stable physics
+        entityTypes,
+        significanceMin,
+        verifiedOnly: false,
         timelineRange,
-        searchQuery: filters.searchQuery,
+        searchQuery,
       }),
-    [fullGraphData, filters, timelineRange]
+    [fullGraphData, entityTypes, significanceMin, searchQuery, timelineRange]
   )
-  const verifiedOnly = filters.verifiedOnly
 
   // Get connected node IDs for highlighting
   const connectedNodeIds = useMemo(() => {
