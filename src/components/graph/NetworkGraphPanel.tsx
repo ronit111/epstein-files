@@ -314,28 +314,6 @@ export function NetworkGraphPanel() {
         height={dimensions.height}
       />
 
-      {/* Graph legend */}
-      <div className="absolute bottom-4 left-4 flex flex-col gap-1.5 bg-[var(--color-surface-overlay)] backdrop-blur-sm rounded px-3 py-2 border border-[var(--color-ink-lighter)]">
-        {(['person', 'organization', 'document', 'location'] as const).map((type) => (
-          <div key={type} className="flex items-center gap-2 text-xs text-[var(--color-text-secondary)]">
-            <div
-              className="w-2 h-2 rounded-full"
-              style={{ backgroundColor: ENTITY_COLORS[type] }}
-            />
-            <span className="capitalize" style={{ fontFamily: 'var(--font-mono)' }}>
-              {type === 'organization' ? 'Org' : type}
-            </span>
-          </div>
-        ))}
-        <div className="flex items-center gap-2 text-xs text-[var(--color-text-secondary)] mt-1 pt-1 border-t border-[var(--color-ink-lighter)]">
-          <div className="w-4 border-t border-[var(--color-text-muted)]" />
-          <span style={{ fontFamily: 'var(--font-mono)' }}>Verified</span>
-        </div>
-        <div className="flex items-center gap-2 text-xs text-[var(--color-text-secondary)]">
-          <div className="w-4 border-t border-dashed border-[var(--color-ink-lighter)]" />
-          <span style={{ fontFamily: 'var(--font-mono)' }}>Reported</span>
-        </div>
-      </div>
     </div>
   )
 }

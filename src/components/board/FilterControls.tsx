@@ -18,10 +18,6 @@ export function FilterControls() {
     }
   }
 
-  const toggleVerified = () => {
-    setFilters({ verifiedOnly: !filters.verifiedOnly })
-  }
-
   return (
     <div className="flex flex-col gap-1" role="group" aria-label="Entity filters">
       <span
@@ -56,23 +52,6 @@ export function FilterControls() {
           </button>
         )
       })}
-
-      <div className="h-px bg-[var(--color-ink-lighter)] my-1" />
-
-      <button
-        onClick={toggleVerified}
-        aria-pressed={filters.verifiedOnly}
-        className="flex items-center gap-2 px-2 py-1.5 rounded text-xs transition-all hover:bg-[var(--color-surface-overlay)] focus:outline-none focus-visible:ring-1 focus-visible:ring-[var(--color-accent)] w-full text-left"
-        style={{
-          color: filters.verifiedOnly ? 'var(--color-accent)' : 'var(--color-text-muted)',
-        }}
-        title="Show only court-verified connections"
-      >
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true" className="shrink-0">
-          <path d="M2 6l3 3 5-6" />
-        </svg>
-        Verified only
-      </button>
     </div>
   )
 }

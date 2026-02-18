@@ -130,11 +130,17 @@ export function TimelinePanel() {
     >
       <div className="p-4">
         <h2
-          className="text-xs font-semibold tracking-widest uppercase text-[var(--color-text-secondary)] mb-6"
+          className="text-xs font-semibold tracking-widest uppercase text-[var(--color-text-secondary)] mb-1"
           style={{ fontFamily: 'var(--font-mono)' }}
         >
           Timeline
         </h2>
+        <span
+          className="block text-[10px] text-[var(--color-text-muted)] mb-6"
+          style={{ fontFamily: 'var(--font-mono)' }}
+        >
+          Last updated: Feb 18, 2026
+        </span>
 
         {years.map((year) => (
           <div key={year} className="mb-6">
@@ -156,15 +162,6 @@ export function TimelinePanel() {
           </div>
         ))}
 
-        {/* Last updated */}
-        <div className="mt-8 pt-4 border-t border-[var(--color-ink-lighter)]">
-          <span
-            className="text-[10px] text-[var(--color-text-muted)] tracking-wider"
-            style={{ fontFamily: 'var(--font-mono)' }}
-          >
-            Last updated: Feb 18, 2026
-          </span>
-        </div>
       </div>
     </nav>
   )
