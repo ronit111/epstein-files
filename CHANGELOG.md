@@ -2,6 +2,34 @@
 
 All notable changes to The Epstein Files project will be documented here.
 
+## [0.3.2] - 2026-02-18
+
+### Fixed
+- Mobile tab bar (Network/Timeline) hidden behind Safari bottom toolbar (`h-screen` → `h-dvh`)
+- Cinematic intro particles forming visible diagonal lines (golden ratio hash → module-scope random)
+
+### Changed
+- Project subtitle: "An Interactive Investigation" → "The Case, Mapped" (across all meta tags, OG/Twitter cards, structured data, OG image, README, robots.txt)
+
+## [0.3.1] - 2026-02-18
+
+### Fixed
+- Breadcrumb duplicate React keys on A→B→A navigation
+- Escape key closing both filter dropdown and detail panel simultaneously (capture phase + stopImmediatePropagation)
+- Browser back/forward building breadcrumb trail (switched from `navigateToEntity` to `selectEntity`)
+- Search results derived via `useMemo` instead of cascading `useState`/`useEffect`
+- Graph not centering when entity selected from search or timeline (cross-panel navigation)
+
+### Added
+- Logo click returns to cinematic intro
+- Source URLs clickable in detail panel
+- SVG favicon
+- OG image (1200x630) for link previews
+- `overflow-x: hidden` on html element
+
+### Removed
+- Unused `react-window` dependency
+
 ## [0.3.0] - 2026-02-18
 
 ### Fixed
