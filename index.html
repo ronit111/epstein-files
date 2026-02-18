@@ -3,14 +3,165 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta -->
     <title>The Epstein Files — An Interactive Investigation</title>
-    <meta name="description" content="A comprehensive, interactive investigation into the Jeffrey Epstein case. Explore the network, timeline, and documents." />
+    <meta name="description" content="A comprehensive, interactive investigation into the Jeffrey Epstein case. Explore the network of connections, timeline of events, court documents, and key locations — all sourced from court filings, DOJ releases, and investigative journalism." />
+    <meta name="keywords" content="Epstein files, Jeffrey Epstein, Ghislaine Maxwell, sex trafficking, investigation, network graph, timeline, court documents, DOJ releases, interactive documentary" />
+    <meta name="author" content="Ronit Chidara" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://ignorance-isnt-bliss.pages.dev/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ignorance-isnt-bliss.pages.dev/" />
+    <meta property="og:title" content="The Epstein Files — An Interactive Investigation" />
+    <meta property="og:description" content="Explore the full scope of the Jeffrey Epstein case — people, connections, timeline, and documents — in an interactive investigation. Every claim sourced. Every connection documented." />
+    <meta property="og:site_name" content="The Epstein Files" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Epstein Files — An Interactive Investigation" />
+    <meta name="twitter:description" content="Explore the full scope of the Jeffrey Epstein case — people, connections, timeline, and documents — in an interactive investigation." />
+
+    <!-- Structured Data: WebApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "The Epstein Files",
+      "description": "A comprehensive, interactive investigation into the Jeffrey Epstein case. Explore the network of over 70 entities — people, organizations, documents, and locations — connected through 150+ verified and reported relationships, spanning a timeline from 1976 to 2026.",
+      "url": "https://ignorance-isnt-bliss.pages.dev/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web",
+      "author": {
+        "@type": "Person",
+        "name": "Ronit Chidara"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "Jeffrey Epstein case",
+        "description": "The sex trafficking case involving financier Jeffrey Epstein, his associates, institutional failures, and ongoing investigations."
+      },
+      "keywords": ["Epstein", "investigation", "sex trafficking", "network graph", "interactive documentary", "court documents", "DOJ releases"]
+    }
+    </script>
+
+    <!-- Structured Data: Dataset -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      "name": "Epstein Case Entity Database",
+      "description": "Structured dataset of people, organizations, documents, locations, and timeline events connected to the Jeffrey Epstein case, compiled from court filings, DOJ releases, and investigative journalism.",
+      "url": "https://ignorance-isnt-bliss.pages.dev/",
+      "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "creator": {
+        "@type": "Person",
+        "name": "Ronit Chidara"
+      },
+      "temporalCoverage": "1976/2026",
+      "spatialCoverage": "Global",
+      "variableMeasured": [
+        "Entity connections and relationships",
+        "Timeline events",
+        "Source reliability ratings",
+        "Connection verification status"
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: Article (for the investigative content) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The Epstein Files: An Interactive Investigation",
+      "description": "An interactive documentary investigation exploring the Jeffrey Epstein case — the people, institutions, timeline, and documents that define one of the most far-reaching abuse and trafficking networks ever documented.",
+      "author": {
+        "@type": "Person",
+        "name": "Ronit Chidara"
+      },
+      "datePublished": "2026-02-18",
+      "publisher": {
+        "@type": "Person",
+        "name": "Ronit Chidara"
+      },
+      "mainEntityOfPage": "https://ignorance-isnt-bliss.pages.dev/",
+      "about": [
+        { "@type": "Person", "name": "Jeffrey Epstein" },
+        { "@type": "Person", "name": "Ghislaine Maxwell" },
+        { "@type": "Organization", "name": "U.S. Department of Justice" }
+      ]
+    }
+    </script>
+
+    <!-- Font preloading for critical rendering path -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" as="style" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <!-- Theme color for mobile browsers -->
+    <meta name="theme-color" content="#09090b" />
   </head>
   <body class="bg-slate-950 text-slate-100 antialiased">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Noscript fallback: provides crawlable content for search engines and LLMs that don't execute JS -->
+    <noscript>
+      <div style="max-width: 800px; margin: 0 auto; padding: 40px 20px; font-family: Inter, sans-serif; color: #fafafa; background: #09090b;">
+        <h1>The Epstein Files — An Interactive Investigation</h1>
+        <p>A comprehensive, interactive investigation into the Jeffrey Epstein case. This application presents the full scope of the case through an interactive network graph, chronological timeline, and detailed entity profiles — all sourced from court documents, DOJ releases, and investigative journalism.</p>
+
+        <h2>Key People</h2>
+        <ul>
+          <li><strong>Jeffrey Epstein</strong> — Financier and convicted sex offender. At the center of one of the most far-reaching abuse and trafficking networks ever documented. Died August 10, 2019 at Metropolitan Correctional Center.</li>
+          <li><strong>Ghislaine Maxwell</strong> — British socialite convicted on five federal counts including sex trafficking of a minor. Sentenced to 20 years in federal prison in June 2022.</li>
+          <li><strong>Virginia Giuffre</strong> — Epstein's most prominent accuser. Testified about being trafficked beginning at age 16. Filed landmark lawsuits against Maxwell and Prince Andrew.</li>
+          <li><strong>Alexander Acosta</strong> — Former U.S. Attorney who approved the controversial 2007 Non-Prosecution Agreement. Resigned as Secretary of Labor in July 2019.</li>
+          <li><strong>Jean-Luc Brunel</strong> — French modeling agent who co-founded MC2 Model Management with Epstein's financial backing. Found dead in Paris jail in February 2022.</li>
+        </ul>
+
+        <h2>Key Organizations</h2>
+        <ul>
+          <li><strong>JP Morgan Chase</strong> — Banked Epstein from 1998-2013. Settled with victims for $290 million in 2023.</li>
+          <li><strong>Deutsche Bank</strong> — Banked Epstein from 2013-2019. Fined $150 million for compliance failures. Settled with victims for $75 million.</li>
+          <li><strong>SDNY</strong> — Brought 2019 sex trafficking charges and prosecuted Ghislaine Maxwell.</li>
+        </ul>
+
+        <h2>Key Timeline Events</h2>
+        <ul>
+          <li><strong>2005</strong> — Palm Beach Police begin investigation after parent reports abuse of 14-year-old daughter.</li>
+          <li><strong>2007</strong> — Non-Prosecution Agreement signed, granting immunity to Epstein and co-conspirators.</li>
+          <li><strong>2008</strong> — Epstein pleads guilty to state charges, sentenced to 18 months with work release.</li>
+          <li><strong>2018</strong> — Miami Herald publishes "Perversion of Justice" series, reigniting public attention.</li>
+          <li><strong>2019</strong> — Epstein arrested on federal sex trafficking charges (July 6). Found dead in jail (August 10).</li>
+          <li><strong>2021</strong> — Ghislaine Maxwell convicted on five of six federal counts.</li>
+          <li><strong>2024-2026</strong> — DOJ releases over 207,000 documents including 3 million pages in final January 2026 release.</li>
+        </ul>
+
+        <h2>Key Documents</h2>
+        <ul>
+          <li><strong>Non-Prosecution Agreement (2007)</strong> — The controversial federal agreement shielding Epstein and unnamed co-conspirators.</li>
+          <li><strong>SDNY Indictment (2019)</strong> — Federal charges of sex trafficking of minors and conspiracy.</li>
+          <li><strong>Flight Logs</strong> — Passenger manifests from Epstein's aircraft documenting 1,700+ flights.</li>
+          <li><strong>Epstein's Black Book</strong> — Contact list containing approximately 1,500 names.</li>
+          <li><strong>DOJ Document Releases (2024-2026)</strong> — Over 207,000 documents released in 12 data sets.</li>
+        </ul>
+
+        <h2>Key Locations</h2>
+        <ul>
+          <li><strong>Little St. James Island</strong> — Private island in U.S. Virgin Islands, central to trafficking allegations.</li>
+          <li><strong>9 East 71st Street, Manhattan</strong> — Upper East Side mansion where evidence was found in locked safe.</li>
+          <li><strong>358 El Brillo Way, Palm Beach</strong> — Residence where the original 2005 investigation began.</li>
+          <li><strong>Metropolitan Correctional Center</strong> — Federal detention facility where Epstein died.</li>
+        </ul>
+
+        <p><em>This interactive investigation requires JavaScript to display the network graph, timeline, and entity detail panels. Please enable JavaScript for the full experience.</em></p>
+      </div>
+    </noscript>
   </body>
 </html>

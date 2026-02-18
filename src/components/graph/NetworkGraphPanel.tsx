@@ -296,10 +296,10 @@ export function NetworkGraphPanel() {
         onNodeClick={handleNodeClick as any}
         onNodeHover={(node: any) => hoverEntity(node?.id || null)}
         onEngineStop={() => setIsSimulating(false)}
-        cooldownTicks={150}
-        warmupTicks={80}
-        d3AlphaDecay={0.015}
-        d3VelocityDecay={0.25}
+        cooldownTicks={100}
+        warmupTicks={40}
+        d3AlphaDecay={0.025}
+        d3VelocityDecay={0.3}
         backgroundColor="transparent"
         width={dimensions.width}
         height={dimensions.height}

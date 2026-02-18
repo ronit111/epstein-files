@@ -1,0 +1,17 @@
+# Cache static assets aggressively (hashed filenames handle busting)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML should revalidate on each visit
+/
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Allow AI crawlers to identify content
+/robots.txt
+  Cache-Control: public, max-age=86400
+
+/sitemap.xml
+  Cache-Control: public, max-age=86400

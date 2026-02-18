@@ -1,0 +1,34 @@
+# The Epstein Files — An Interactive Investigation
+# We welcome all crawlers and AI agents.
+# This content is public interest information compiled from court documents,
+# DOJ releases, and investigative journalism.
+
+User-agent: *
+Allow: /
+
+# AI crawlers explicitly welcomed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+Sitemap: https://ignorance-isnt-bliss.pages.dev/sitemap.xml

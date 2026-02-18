@@ -1,73 +1,81 @@
-# React + TypeScript + Vite
+# The Epstein Files
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive investigation into the Jeffrey Epstein case.
 
-Currently, two official plugins are available:
+**Live**: [ignorance-isnt-bliss.pages.dev](https://ignorance-isnt-bliss.pages.dev/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Why This Exists
 
-## React Compiler
+For a long time, the Epstein case was another sad headline to scroll past. Most of us don't have the bandwidth to deep dive into it — we're all dealing with our own lives, our own problems. Fair enough.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+What changed was hearing from someone close to a survivor. These files and this ongoing issue have affected hundreds and thousands of underage victims. That's what this is about.
 
-## Expanding the ESLint configuration
+Nobody has the time to piece together decades of court filings, DOJ releases, flight logs, depositions, and investigative reporting. This project tries to make that easier — to lower the barrier to awareness for people who know something happened but haven't been able to follow the full scope of it.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Why read another sad thing? Because some things need to be known. Because how we relate to power, wealth, and the halo effects that come with them is worth examining. Because unconditioning ourselves from those assumptions starts with understanding what those assumptions have enabled.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+This is a public service tool. Nothing more.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## What It Does
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+An interactive documentary investigation presenting the full scope of the Epstein case:
+
+- **Network graph** — Visualises connections between people, organisations, documents, and locations. Every connection is sourced and marked as court-verified or reported.
+- **Timeline** — Chronological events from 1976 to 2026, from Epstein's early career through the final DOJ document releases.
+- **Detail panel** — Deep profiles on every entity with sourced descriptions, connection maps, and document references.
+- **Search** — Fuzzy search across all entities (Cmd+K / Ctrl+K).
+- **Cinematic intro** — Context-setting scroll sequence for first-time visitors. Skipped automatically on return visits.
+
+Every claim is sourced. Every connection carries a reliability rating. Allegations are labelled as allegations. Court-documented facts are labelled as verified.
+
+## Content Principles
+
+- **Factual above all** — Every claim traceable to court documents, confirmed reporting, or public records.
+- **No conspiracy** — No speculation presented as fact. No clickbait framing.
+- **Verified vs reported** — The distinction is visible to the user on every connection.
+- **Respects victims** — Their stories are told because they chose to speak publicly. No salacious detail for its own sake.
+- **Unflinching** — Names institutional failures. Asks hard questions about what remains unresolved.
+
+## Data Sources
+
+- Court documents (SDNY indictment, NPA, Maxwell trial transcripts, grand jury testimony)
+- DOJ document releases (207,000+ documents across 12 data sets, 2024-2026)
+- Flight logs and Epstein's contact book (released through court proceedings)
+- Investigative journalism (Miami Herald's "Perversion of Justice," ProPublica, NYT, BBC)
+- Regulatory filings (NY DFS consent orders, SEC records)
+- USVI Attorney General civil complaints and settlements
+
+## Tech Stack
+
+| Layer | Choice |
+|-------|--------|
+| Framework | Vite + React 19 + TypeScript |
+| Network Graph | react-force-graph-2d (canvas, d3-force) |
+| Animation | GSAP + ScrollTrigger (intro), Framer Motion (UI) |
+| CSS | Tailwind v4 |
+| State | Zustand |
+| Search | Fuse.js |
+| Hosting | Cloudflare Pages |
+
+## Running Locally
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Building
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build    # Output in dist/
 ```
+
+## Deploying
+
+```bash
+npx wrangler pages deploy dist --project-name=ignorance-isnt-bliss
+```
+
+## License
+
+The code is open source. The data is compiled from public records, court documents, and published journalism. This project is for public interest and educational purposes.

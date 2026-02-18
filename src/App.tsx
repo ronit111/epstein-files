@@ -1,8 +1,11 @@
-import { useEffect } from 'react'
+import { useEffect, lazy, Suspense } from 'react'
 import { useInvestigationStore } from '@/store/investigation'
-import { CinematicIntro } from '@/components/intro/CinematicIntro'
-import { InvestigationBoard } from '@/components/board/InvestigationBoard'
 import { getEntity } from '@/data/loader'
+
+// Code-split heavy components — CinematicIntro (GSAP ~50KB) and
+// InvestigationBoard (react-force-graph-2d + d3 ~400KB) load on demand
+const CinematicIntro = lazy(() => import('@/components/intro/CinematicIntro').then(m => ({ default: m.CinematicIntro })))
+const InvestigationBoard = lazy(() => import('@/components/board/InvestigationBoard').then(m => ({ default: m.InvestigationBoard })))
 
 export default function App() {
   const introComplete = useInvestigationStore((s) => s.introComplete)
@@ -52,8 +55,19 @@ export default function App() {
       >
         Skip to main content
       </a>
-      {!skipIntro && <CinematicIntro />}
-      {skipIntro && <InvestigationBoard />}
+      <Suspense fallback={
+        <div className="h-screen flex items-center justify-center">
+          <div className="flex flex-col items-center gap-3">
+            <div className="w-2 h-2 rounded-full bg-[var(--color-accent)] animate-pulse" />
+            <span className="text-xs text-[var(--color-text-muted)] tracking-widest uppercase" style={{ fontFamily: 'var(--font-mono)' }}>
+              Loading
+            </span>
+          </div>
+        </div>
+      }>
+        {!skipIntro && <CinematicIntro />}
+        {skipIntro && <InvestigationBoard />}
+      </Suspense>
     </div>
   )
 }
