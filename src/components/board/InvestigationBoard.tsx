@@ -19,7 +19,7 @@ export function InvestigationBoard() {
   return (
     <div
       id="main-content"
-      className="h-screen flex flex-col bg-[var(--color-surface)] overflow-hidden"
+      className="h-dvh flex flex-col bg-[var(--color-surface)] overflow-hidden"
       style={{ paddingTop: 'var(--safe-top)', paddingLeft: 'var(--safe-left)', paddingRight: 'var(--safe-right)' }}
       role="main"
     >

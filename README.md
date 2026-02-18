@@ -1,6 +1,6 @@
 # The Epstein Files
 
-An interactive investigation into the Jeffrey Epstein case.
+The case, mapped.
 
 **Live**: [ignorance-isnt-bliss.pages.dev](https://ignorance-isnt-bliss.pages.dev/)
 
@@ -18,7 +18,7 @@ This is a public service tool. Nothing more.
 
 ## What It Does
 
-An interactive documentary investigation presenting the full scope of the Epstein case:
+The full scope of the Epstein case, mapped:
 
 - **Network graph** — Visualises connections between people, organisations, documents, and locations. Every connection is sourced and marked as court-verified or reported.
 - **Timeline** — Chronological events from 1976 to 2026, from Epstein's early career through the final DOJ document releases.

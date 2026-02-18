@@ -6,21 +6,18 @@ import { useInvestigationStore } from '@/store/investigation'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// Pre-generated particle styles — avoids Math.random() during render
-const PARTICLE_STYLES = Array.from({ length: 60 }, (_, i) => {
-  // Deterministic pseudo-random using index (golden ratio hash)
-  const hash = (n: number) => ((n * 0.618033988749895) % 1)
-  return {
-    width: hash(i * 4 + 0) * 3 + 1 + 'px',
-    height: hash(i * 4 + 1) * 3 + 1 + 'px',
-    left: hash(i * 4 + 2) * 100 + '%',
-    top: hash(i * 4 + 3) * 100 + '%',
-    backgroundColor: '#a1a1aa' as const,
-    opacity: hash(i * 7) * 0.2 + 0.03,
-    animation: `pulse-glow ${4 + hash(i * 11) * 5}s ease-in-out infinite`,
-    animationDelay: hash(i * 13) * 4 + 's',
-  }
-})
+// Pre-generated particle styles at module scope — Math.random() is fine here
+// because this runs once at import time, not during component render.
+const PARTICLE_STYLES = Array.from({ length: 60 }, () => ({
+  width: Math.random() * 3 + 1 + 'px',
+  height: Math.random() * 3 + 1 + 'px',
+  left: Math.random() * 100 + '%',
+  top: Math.random() * 100 + '%',
+  backgroundColor: '#a1a1aa' as const,
+  opacity: Math.random() * 0.2 + 0.03,
+  animation: `pulse-glow ${4 + Math.random() * 5}s ease-in-out infinite`,
+  animationDelay: Math.random() * 4 + 's',
+}))
 
 const introSections = [
   {

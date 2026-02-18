@@ -1,7 +1,7 @@
 # The Epstein Files — Project Identity
 
 ## What This Is
-An interactive documentary investigation into the Jeffrey Epstein case. A web app that presents the full scope of the case — people, connections, timeline, documents, locations — in a way that's comprehensive yet navigable. Every data point is sourced and rated for reliability.
+The Jeffrey Epstein case, mapped. People, connections, timeline, documents, locations — comprehensive yet navigable. Every data point is sourced and rated for reliability.
 
 ## Content Principles (HIGHEST PRIORITY)
 - **Factual above all**: Every claim must be traceable to court documents, confirmed reporting, or public records
